@@ -1,0 +1,30 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+
+# Dependencies
+markdown:            kramdown
+
+permalink:           pretty
+#relative_permalinks: true
+
+# Setup
+title:               Sahri Riza Umami
+tagline:             'nobody that do nothing'
+description:         'My personal blog about things me think is interesting.'
+url:                 http://rizaumami.github.io
+baseurl:             ''
+paginate:            5
+
+# About/contact
+author:
+  name:              'Sahri Riza Umami'
+  github:            rizaumami
+  email:             riza@openmailbox.org
+  telegram:          kuncen
+  rss:               http://rizaumami.github.io
+  disqus_shortname:  rizaumami
+
+gems:
+  - jekyll-paginate
+  - jemoji
