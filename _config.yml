@@ -12,7 +12,7 @@ permalink:           pretty
 title:               Sahri Riza Umami
 tagline:             'nobody that do nothing'
 description:         'My personal blog about things me think is interesting.'
-url:                 http://rizaumami.github.io
+url:                 https://rizaumami.github.io
 baseurl:             ''
 paginate:            5
 
@@ -22,7 +22,7 @@ author:
   github:            rizaumami
   email:             riza@openmailbox.org
   telegram:          kuncen
-  rss:               http://rizaumami.github.io
+  rss:               https://rizaumami.github.io
   disqus_shortname:  rizaumami
 
 gems:

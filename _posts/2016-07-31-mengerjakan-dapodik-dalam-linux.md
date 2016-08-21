@@ -21,7 +21,7 @@ Dari gambar di atas kita dapat IP adalah `10.0.2.15`.
 
 Dapodikdas versi 2016 dijalankan dalam _localhost_ pada _port_ `5774` di _guest_. Untuk _host_ baiknya kita gunakan _port_ yang tidak digunakan, misalnya `8080`. 
 
-Dicontohkan menggunakan `VBoxManage` untuk _port forwarding_ Dapodik di _virtual machine_ bernama Windows 7 dengan IP `10.0.2.15` dan _port_ `5774` ke _localhost_ dengan IP 127.0.0.1 dan _port_ `8080`.
+Dicontohkan menggunakan `VBoxManage` untuk _port forwarding_ Dapodik di _virtual machine_ bernama Windows 7 dengan IP `10.0.2.15` dan _port_ `5774` ke _localhost_ dengan IP `127.0.0.1` dan _port_ `8080`.
 
 <pre>
 VBoxManage modifyvm "Windows 7" --natpf1 Dapodikdas,tcp,127.0.0.1,8080,10.0.2.15,5774  
