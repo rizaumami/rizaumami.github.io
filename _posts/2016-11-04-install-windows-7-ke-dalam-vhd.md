@@ -48,7 +48,7 @@ assign letter=c
 {% endhighlight %}
 - Saatnya membuat berkas VHD. Menggunakan _installer_ normal, Windows membutuhkan partisi berukuran setidaknya 13GB. Sebuah _fixed_ VHD berukuran 17GB akan cukup untuk kasus saya, karena niatannya hanya untuk dipasangi _flashing software_ yang ukurannya tidaklah besar.
 {% highlight sh %}
-create vdisk file=c:\windows7.vhd maximum=17000 type=fixed create vdisk file=c:\windows7.vhd maximum=17000 type=fixed
+create vdisk file=c:\windows7.vhd maximum=17000 type=fixed
 {% endhighlight %}
 - Pilih VHD yang telah dibuat
 {% highlight sh %}
