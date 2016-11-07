@@ -11,9 +11,9 @@ comments: true
 
 * Unduh Genymotion dari situsnya di [https://www.genymotion.com](https://www.genymotion.com)
 
-Mungkin diperlukan pendaftaran terlebih dahulu. Atau jika enggan mendaftar, bisa dengan mengunjungi [AUR](https://aur.archlinux.org/packages/genymotion/) atau [AUR4](https://aur4.archlinux.org/packages/genymotion/), di kolom *source* Anda akan menemukan *direct link* berkas Genymotion.
+  Mungkin diperlukan pendaftaran terlebih dahulu. Atau jika enggan mendaftar, bisa dengan mengunjungi [AUR](https://aur.archlinux.org/packages/genymotion/) atau [AUR4](https://aur4.archlinux.org/packages/genymotion/), di kolom *source* Anda akan menemukan *direct link* berkas Genymotion.
 
-Dicontohkan berkas Genymotion yang diunduh adalah versi 2.5 64bit:
+  Dicontohkan berkas Genymotion yang diunduh adalah versi 2.5 64bit:
 
 {% highlight sh %}
 sudo wget http://files2.genymotion.com/genymotion/genymotion-2.5.0/genymotion-2.5.0_x64.bin -O /opt

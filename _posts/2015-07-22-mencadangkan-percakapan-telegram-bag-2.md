@@ -24,7 +24,7 @@ Perintah tersebut akan menjalankan `telegram-cli` sebagai *daemon* dan membuka s
 
 * Berkas `log` adalah berisi semua percakapan pada akun Telegram serta `stdout` dari `telegram-cli`, jadi tidak teratur dan terkelompokkan.
 
-Untuk mendapatkan `log` yang rapi, kita harus menyaringnya. Misal menggunakan `awk` seperti perintah berikut:
+  Untuk mendapatkan `log` yang rapi, kita harus menyaringnya. Misal menggunakan `awk` seperti perintah berikut:
 
 {% highlight sh %}
 awk '!/ is typing in chat | [(]was online | marked read | is uploading |\x0|^got SIGHUP.|^ \*\*../' ~/Documents/telegram.log | awk '/^\[..:..\]/ { p = $2 == "PegeLinux" } p' | awk -F'»»»|>>>' '{gsub(/]  PegeLinux /,"] ")}{printf "%-30s%s\n", $1,$2}' > pegelinux-$(date +%y%m%d-%H.%M).log

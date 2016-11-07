@@ -43,7 +43,7 @@ Paket dalam map `root.x86_64` hanya berupa paket-paket mendasar dan ada lebih ba
 nano /tmp/root.x86_64/etc/pacman.d/mirrorlist
 {% endhighlight %}
 
-Tekan `CTRL+W` dan ketik `Indonesia` untuk mencari baris *mirror* dari Indonesia, hilangkan tanda pagar di depan baris *mirror* yang diinginkan lalu tekan `CTRL+O` untuk menyimpan perubahan. `CTRL+X` untuk keluar dari `nano`.
+Tekan `CTRL+W` dan ketik `Indonesia` untuk mencari baris *mirror* dari Indonesia, hilangkan tanda pagar di depan baris *mirror* yang diinginkan lalu tekan `CTRL+O` untuk menyimpan perubahan. Tekan `CTRL+X` untuk keluar dari `nano`.
 
 Saatnya berpindah *root* untuk melakukan pengaturan dari dalam sistem `bootstrap`.
 
@@ -158,7 +158,7 @@ Beri *user* baru ini kemampuan `sudo` agar dapat melakukan pekerjaan yang membut
 pacman -S sudo
 {% endhighlight %}
 
-Masukkan *user* ke dalam daftar `sudoer`.
+Jalankan `visudo` untuk memasukkan *user* ke dalam daftar `sudoer`.  
 
 {% highlight sh %}
 EDITOR=nano visudo
@@ -196,7 +196,7 @@ Pasang `X` untuk dukungan grafis
 pacman -S xorg
 {% endhighlight %}
 
-Pasang *driver* VGA. Karena ThinkPad ini hanya memiliki *integrated* VGA dari Intel, maka:
+Pasang *driver* VGA. Karena ThinkPad saya ini hanya memiliki *integrated* VGA dari Intel, maka:
 
 {% highlight sh %}
 pacman -S xf86-video-intel
@@ -214,7 +214,7 @@ Pasang *Desktop Environment*. Berikut cara memasang GNOME sebagai DE.
 pacman -S gnome
 {% endhighlight %}
 
-Terdapat dua grup untuk GNOME, yaitu `gnome` dan `gnome-extra`. Pastikan `gnome` dipasang, `gnome-extra` hanya berupa paket tambahan. Kita juga dapat memilih paket apa saja dalam grup yang hendak dipasang.
+Terdapat dua grup untuk GNOME, yaitu `gnome` dan `gnome-extra`. Pastikan `gnome` dipasang, `gnome-extra` hanya berupa paket tambahan. Jika menginginkan sistem yang lebih ramping, alih-alih memasang paket `gnome-extra`, kita dapat memilih untuk hanya memasang paket yang diperlukan saja.
 
 Aktifkan layanan yang diperlukan, misal *login manager* dan *network manager*.
 

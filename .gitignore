@@ -2,6 +2,7 @@
 _gh_pages
 _site
 .ruby-version
+.sass-cache
 TODO
 
 # Numerous always-ignore extensions

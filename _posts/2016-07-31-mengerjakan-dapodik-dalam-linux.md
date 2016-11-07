@@ -15,7 +15,7 @@ Mungkin ada cara lain, namun saya lebih memilih memasang aplikasi Dapodik dalam 
 Untuk melakukan _port forwarding_ dari _guest_ (Windows 7) VirtualBox ke _host_ (Linux), ikuti langkah berikut;  
 Pertama, kita harus tahu IP dari _guest_. Karenanya jalankan _guest_ dan jalankan perintah `ipconfig` dalam _command line_ di _guest_.
 
-[![ipconfig]({{ site.baseurl }}/img/cmd-ipconfig.png)]({{ site.baseurl }}/img/cmd-ipconfig.png)
+[![ipconfig]({{ site.baseurl }}/imgs/cmd-ipconfig.png)]({{ site.baseurl }}/imgs/cmd-ipconfig.png)
 
 Dari gambar di atas kita dapat IP adalah `10.0.2.15`.
 
@@ -23,13 +23,13 @@ Dapodikdas versi 2016 dijalankan dalam _localhost_ pada _port_ `5774` di _guest_
 
 Dicontohkan menggunakan `VBoxManage` untuk _port forwarding_ Dapodik di _virtual machine_ bernama Windows 7 dengan IP `10.0.2.15` dan _port_ `5774` ke _localhost_ dengan IP `127.0.0.1` dan _port_ `8080`.
 
-<pre>
+```sh
 VBoxManage modifyvm "Windows 7" --natpf1 Dapodikdas,tcp,127.0.0.1,8080,10.0.2.15,5774  
-</pre>
+```
 
 _That’s it!_  
 Dalam hal ini _guest_ berfungsi sebagai _server_ dan _host_ sebagai _client_. Untuk mengerjakan Dapodik di _host_ mesti menjalankan _guest_ terlebih dahulu, baru kemudian membuka _browser_ di _host_ dan masukkan alamat `http://localhost:8080`.  
 
-[![ipconfig]({{ site.baseurl }}/img/vbox-port-forward-dapodik.png)]({{ site.baseurl }}/img/vbox-port-forward-dapodik.png)
+[![dapodik]({{ site.baseurl }}/imgs/vbox-port-forward-dapodik.png)]({{ site.baseurl }}/imgs/vbox-port-forward-dapodik.png)
 
 Meski bisa mengerjakan Dapodik secara simultan dalam _guest_ dan _host_, namun untuk sinkronisasi tetap harus melalui _guest_ (Windows 7).

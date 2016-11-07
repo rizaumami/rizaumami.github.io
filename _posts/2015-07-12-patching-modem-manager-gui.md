@@ -60,31 +60,31 @@ Unduh *patch*.
 wget http://download.tuxfamily.org/gsf/patch/modem-manager-gui-0.0.17.1-fix-libebook-api-break-v2.patch
 {% endhighlight %}
 
-* Uraikan berkas `modem-manager-gui_0.0.17.1.orig.tar.gz` menggunakan perintah:
+Uraikan berkas `modem-manager-gui_0.0.17.1.orig.tar.gz` menggunakan perintah:
 
 {% highlight sh %}
 tar xvf modem-manager-gui_0.0.17.1.orig.tar.gz
 {% endhighlight %}
 
-* Uraikan berkas `modem-manager-gui_0.0.17.1-2.debian.tar.xz` ke dalam map `modem-manager-gui`.
+Uraikan berkas `modem-manager-gui_0.0.17.1-2.debian.tar.xz` ke dalam map `modem-manager-gui`.
 
 {% highlight sh %}
 tar -xJC modem-manager-gui-0.0.17.1  -f modem-manager-gui_0.0.17.1-2.debian.tar.xz
 {% endhighlight %}
 
-* Masuk ke dalam map `modem-manager-gui-0.0.17.1` untuk memulai kompilasi
+Masuk ke dalam map `modem-manager-gui-0.0.17.1` untuk memulai kompilasi
 
 {% highlight sh %}
 cd modem-manager-gui-0.0.17.1
 {% endhighlight %}
 
-* *Patch source*.
+*Patch source*.
 
 {% highlight sh %}
 patch -p1 < ../modem-manager-gui-0.0.17.1-fix-libebook-api-break-v2.patch
 {% endhighlight %}
 
-* Lakukan kompilasi
+Lakukan kompilasi
 
 {% highlight sh %}
 dpkg-buildpackage -uc -us -rfakeroot
@@ -106,7 +106,7 @@ Ulangi kompilasi.
 
 Jika kompilasi berhasil, akan ada berkas `modem-manager-gui_0.0.17.1-2_amd64.deb` dan `modem-manager-gui-dbg_0.0.17.1-2_amd64.deb` di luar map `mmgui`.
 
-* Install paket `modem-manager-gui` hasil komppilasi.
+Install paket `modem-manager-gui` hasil komppilasi.
 
 {% highlight sh %}
 modem-manager-gui-dbg_0.0.17.1-2_amd64.deb

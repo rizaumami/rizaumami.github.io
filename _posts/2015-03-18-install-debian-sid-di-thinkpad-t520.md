@@ -7,13 +7,13 @@ comments: true
 
 Tulisan ini merupakan catatan pemasangan installasi Debian Sid menggunakan debootstrap dari ArchLinux per Februari 2015.
 
-`Debootstrap` adalah Debian bootstrap. Paket `debootstrap` tidak ada dalam repo ArchLinux melainkan dalam *Arch User Repository* (AUR). Pasang `debootstrap` menggunakan AUR *wrapper* semisal `yaourt`.
+`Debootstrap` adalah Debian _bootstrap_. Paket `debootstrap` tidak ada dalam repo ArchLinux melainkan dalam *Arch User Repository* (AUR). Pasang `debootstrap` menggunakan AUR *wrapper* semisal `yaourt`.
 
 {% highlight sh %}
 yaourt -S debootstrap
 {% endhighlight %}
 
-Lakukan debootstrap.
+Lakukan `debootstrap`.
 
 {% highlight sh %}
 sudo debootstrap --arch=amd64 --variant=buildd --no-check-gpg sid /tmp/_sid http://kambing.ui.ac.id/debian
@@ -29,25 +29,26 @@ mount -t proc /proc /tmp/_sid/proc
 mount -t sysfs /sys /tmp/_sid/sys
 {% endhighlight %}
 
-Sistem `debootstrap` yang terpasang belum memadai untuk pemakaian *desktop computing* karenanya kita perlu memasang aplikasi-aplikasi yang diperlukan agar kegiatan berkomputasi menyenangkan.
+Sistem `debootstrap` yang terpasang belum memadai untuk pemakaian *desktop computing*, karenanya kita perlu memasang aplikasi-aplikasi yang diperlukan agar kegiatan berkomputasi menyenangkan.
 
 Kaitkan `resolv.conf` *host* agar sistem `debootstrap` dapat menggunakan koneksi internet *host*.
 
-{% highlight sh %} 
+{% highlight sh %}
 mount --bind /etc/resolv.conf /tmp/_sid/etc/resolv.conf
 {% endhighlight %}
 
-Tentukan `/etc/hosts` bagi sistem `debootstrap`. Sunting berkas `/tmp/_sid/etc/hosts`:
+Tentukan `/etc/hosts` bagi sistem `debootstrap`.  
+Sunting berkas `/tmp/_sid/etc/hosts`:
 
 {% highlight sh %}
 nano /tmp/_sid/etc/hosts
 {% endhighlight %}
 
-Dan isikan baris berikut dengan --misal-- hosts/hostname adalah sid:
+Dan isikan baris berikut dengan --misal-- _hosts/hostname_ adalah `sid`:
 
 {% highlight sh %}
-127.0.0.1	localhost
-127.0.1.1	sid
+127.0.0.1 localhost
+127.0.1.1 sid
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
@@ -63,7 +64,7 @@ echo sid > /tmp/_sid/etc/hostname
 
 Sistem `debootstrap` perlu mengenali dimana ia dipasang dan kandar mana sajakah yang terhubung padanya. Untuk inilah guna *filesystem table* dalam `/etc/fstab`.
 
-Untuk mudahnya, `fstab` disalin dari sistem yang kini dipakai.
+Untuk mudahnya, `fstab` disalin dari sistem yang kini sedang dipakai.
 
 {% highlight sh %}
 cp /etc/fstab /tmp/_sid/etc
@@ -153,7 +154,7 @@ Pasang GNOME dan pendukungnya:
 aptitude install gnome-shell colord file gdm3 gnome-control-center gnome-session gstreamer1.0-plugins-base gstreamer1.0-plugins-good gtk2-engines-pixbuf hwdata nautilus pulseaudio gnome-terminal gedit iceweasel
 {% endhighlight %}
 
-Buat `username` baru.
+Buat `username` baru, misal `iza`.
 
 {% highlight sh %}
 adduser iza
@@ -165,7 +166,7 @@ Buat grup `admin`.
 addgroup --system admin
 {% endhighlight %}
 
-Tambahkan `user` yang baru kedalamnya.
+Tambahkan `user` yang tadi baru kita buat kedalam grup admin.
 
 {% highlight sh %}
 addgroup iza admin
@@ -195,7 +196,7 @@ Pasang *bootloader*.
 aptitude install grub2 grub-imageboot
 {% endhighlight %}
 
-*Install* `grub` di MBR jika hendak menjadikannya *bootloader* utama. *Install* `grub` di *bootsector* partisi jika tidak ingin menjadikannya sebagai *bootloader* utama.
+*Install* `grub` di _Master Boot Record (MBR)_ jika hendak menjadikannya *bootloader* utama. *Install* `grub` di _Partition Boot Sector (PBR)_ jika tidak ingin menjadikannya sebagai *bootloader* utama.
 
 Sistem `debootstrap` telah selesai disiapkan. Keluar dari sistem `debootstrap`.
 

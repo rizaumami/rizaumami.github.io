@@ -26,67 +26,71 @@ Setelah pembuatan _bootable flash disk_ selesai, kita mulai proses inatllasi Win
 Dalam jendela `cmd.exe` ini kita akan membuat VHD dan mengaitkannya untuk kemudian dijadikan sebagai partisi installasi Windows 7.  
 Baris-baris perintah pada langkah berikut dilakukan di dalam jendela `cmd.exe`.
 - Panggil `diskpart`, sebuah _disk partitioning utility_ Windows
-<pre>
+{% highlight sh %}
 DISKPART
-</pre>
+{% endhighlight %}
 - Lihat daftar _disk_ atau partisi yang dikenali Windows
-<pre>
+{% highlight sh %}
 list volume
-</pre>
+{% endhighlight %}
 - Seperti telah dijelaskan di paragraf terdahulu, di laptop ini terpasang satu SSD Ext4 dan satu HDD NTFS. Perhatikan dengan seksama hasil perintah `list volume` di atas, jangan sampai salah pilih _volume_.  
 Pilih _volume_ (partisi) NTFS yang akan jadi tempat kita meletakkan VHD, misal dicontohkan di sini sebagai _volume_ 0.
-<pre>
+{% highlight sh %}
 select volume 0
-</pre>
+{% endhighlight %}
 - Buat partisi ini _bootable_
-<pre>
+{% highlight sh %}
 active
-</pre>
+{% endhighlight %}
 - Windows menggunakan _drive letter_ sebagai identifikasi partisi, dan umumnya installasi Windows selalu menggunakan huruf C.
-<pre>
+{% highlight sh %}
 assign letter=c
-</pre>
+{% endhighlight %}
 - Saatnya membuat berkas VHD. Menggunakan _installer_ normal, Windows membutuhkan partisi berukuran setidaknya 13GB. Sebuah _fixed_ VHD berukuran 17GB akan cukup untuk kasus saya, karena niatannya hanya untuk dipasangi _flashing software_ yang ukurannya tidaklah besar.
-<pre>
-create vdisk file=c:\windows7.vhd maximum=17000 type=fixed
-</pre>
+{% highlight sh %}
+create vdisk file=c:\windows7.vhd maximum=17000 type=fixed create vdisk file=c:\windows7.vhd maximum=17000 type=fixed
+{% endhighlight %}
 - Pilih VHD yang telah dibuat
-<pre>
+{% highlight sh %}
 select vdisk file=c:\windows7.vhd
-</pre>
+{% endhighlight %}
 - Kaitkan, agar isinya bisa diakses
-<pre>
+{% highlight sh %}
 attach vdisk
-</pre>
+{% endhighlight %}
 - Buat partisi di dalam VHD
-<pre>
+{% highlight sh %}
 create part primary
-</pre>
+{% endhighlight %}
 - Format partisi ini
-<pre>
+{% highlight sh %}
 format fs=ntfs label="Windows 7" quick
-</pre>
+{% endhighlight %}
 - Jadikan partisi ini _bootable_
-<pre>
+{% highlight sh %}
 active
-</pre>
+{% endhighlight %}
 - Berikan partisi ini _drive letter_
-<pre>
+{% highlight sh %}
 assign
-</pre>
+{% endhighlight %}
 - Pembuatan VHD telah selesai, saatnya keluar dari `diskpart`
-<pre>
+{% highlight sh %}
 exit
-</pre>
+{% endhighlight %}
 - Tutup jendela `cmd.exe` karena diperlukan lagi.
-<pre>
+{% highlight sh %}
 exit
-</pre>
+{% endhighlight %}
 
 Pemasangan Windows dapat dilanjutkan sebagaimana kita biasanya memasang Windows, dengan satu catatan, pilih jenis pemasangan **Custom (advanced)** dan pilih partisi VHD sebagai target pada jendela _Where do you want to install Windows?_.
 
 _That's it..._  
 Tinggal tunggu beberapa saat dan beberapa kali _reboot_ sampai Windows benar-benar bisa digunakan.
+
+```bash
+format fs=ntfs label="Windows 7" quick
+```
 
 Jika menginginkan installasi yang lebih singkat, atau enggan mengetik perintah-perintah, kita bisa menggunakan bantuan [WinNTSetup](http://www.msfn.org/board/topic/149612-winntsetup-v386) dan [BootICE](http://bbs.wuyou.net/forum.php?mod=viewthread&tid=57675).
 

@@ -14,14 +14,18 @@ Akhir-akhir ini cermin (*mirror*) lumbung paket dalam negeri sering tidak dapat 
 
 Pengguna Debian dapat dengan mudah membuat `sources.list` berisi cermin tercepat menggunakan `netselect-apt`. Berikut dicontohkan menggunakan `netselect-apt` untuk membuat `sources.list` berisi cermin dari Indonesia untuk Debian:
 
-* Pasang paket `netselect-apt`.  {% highlight sh %}
-  sudo aptitude install netselect-apt
-  {% endhighlight %}
+* Pasang paket `netselect-apt`.  
+{% highlight sh %}
+sudo aptitude install netselect-apt
+{% endhighlight %}
 
-* Jalankan `netselect-apt` untuk mendaftar cermin tercepat.  {% highlight sh %}
-  sudo netselect-apt sid -nc ID -o /etc/apt/sources.list
-  {% endhighlight %}  Yang artinya; jalankan `netselect-apt` untuk mencari cermin Debian `sid` tercepat di Indonesia (`-c ID`) dan simpan hasilnya di `/etc/apt/sources.list`, tidak lupa untuk memasukkan komponen *non-free* (`-n`) ke dalamnya.  
-Berikut hasilnya;  {% highlight sh %}
+* Jalankan `netselect-apt` untuk mendaftar cermin tercepat.  
+{% highlight sh %}
+sudo netselect-apt sid -nc ID -o /etc/apt/sources.list
+{% endhighlight %}  
+Yang artinya; jalankan `netselect-apt` untuk mencari cermin Debian `sid` tercepat di Indonesia (`-c ID`) dan simpan hasilnya di `/etc/apt/sources.list`, tidak lupa untuk memasukkan komponen *non-free* (`-n`) ke dalamnya.  
+Berikut hasilnya;  
+{% highlight sh %}
 Using distribution sid.
 Retrieving the list of mirrors from www.debian.org...  
 --2015-12-12 08:12:45--  http://www.debian.org/mirror/mirrors_full
@@ -49,13 +53,14 @@ Done.
 {% endhighlight %}
 
 * *That's it!*
-  Berkas `sources.list` kini berisi cermin tercepat yang dapat diakses dari tempat kita.  {% highlight sh %}
-  # Debian packages for sid
-  deb http://suro.ubaya.ac.id/debian/ sid main contrib non-free
-  # Uncomment the deb-src line if you want 'apt-get source'
-  # to work with most packages.
-  # deb-src http://suro.ubaya.ac.id/debian/ sid main contrib non-free  
-  # Security updates for stable
-  # deb http://security.debian.org/ stable/updates main contrib non-free
-  {% endhighlight %}
+  Berkas `sources.list` kini berisi cermin tercepat yang dapat diakses dari tempat kita.  
+{% highlight sh %}
+# Debian packages for sid
+deb http://suro.ubaya.ac.id/debian/ sid main contrib non-free
+# Uncomment the deb-src line if you want 'apt-get source'
+# to work with most packages.
+# deb-src http://suro.ubaya.ac.id/debian/ sid main contrib non-free  
+# Security updates for stable
+# deb http://security.debian.org/ stable/updates main contrib non-free
+{% endhighlight %}
 

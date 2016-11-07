@@ -9,17 +9,17 @@ comments: true
 
 Jalankan `Firefox` kemudian ketikkan `about:config` di *address bar*, dan ...
 
-### Perbaiki *scrolling* yang tersendat
+### **Perbaiki _scrolling_ yang tersendat**
 
 Cari `layout.frame_rate.precise` dan tetapkan menjadi `enable`. Langkah ini akan meningkatkan kecepatan animasi.
 
 
-### Mempercepat *loading* halaman
+### **Mempercepat _loading_ halaman**
 
 Cari `privacy.trackingprotection.enabled` dan tetapkan ke `true`. *Entry* ini adalah perlindungan *tracking* bawaan `Firefox`, yang selain melindungi pengguna juga meningkatkan kecepatan pemuatan halaman sekitar 20-40%. `privacy.trackingprotection.enabled` memiliki fungsi sama dengan *addons* `Disconnect`. Jadi jika langkah ini diterapkan, Anda dapat melepas *extensions* `Disconnect`.
 
  
-### Menekan penggunaan *memory*
+### **Menekan penggunaan _memory_**
 
 1. Ketika kita membuka sebuah laman yang banyak mengandung gambar, `Firefox` menyimpan gambar-gambar tersebut untuk sementara waktu dalam bentuk tidak termampatkan. Hal ini dimaksudkan agar `Firefox` dapat mengakses gambar-gambar tersebut secara cepat, namun sayangnya dengan mengorbankan penggunaan *memory*. Jika kita banyak membuka laman yang mengandung gambar-gambar berukuran besar, dan `Firefox` menyimpan gambar-gambar tersebut tanpa dimampatkan dan secara terus-menerus, maka akan menyebabkan penggunaan *memory* yang sangat besar. 
 Masalah ini dapat diredam dengan menentukan batasan penggunaan *memory* untuk menyimpan gambar; cari `image.mem.max_decoded_image_kb` dan rendahkan nilai dari bawaannya yang sekitar `256000` atau `~256 MB` ke kisaran `51200` atau `~50 MB`.
@@ -31,12 +31,12 @@ Masalah ini dapat diredam dengan menentukan batasan penggunaan *memory* untuk me
 4. `Firefox` menyimpan tiap *tab* yang terbuka sedemikian sehingga *tab* tersebut tidak perlu dibaca ulang ketika kita mengaksesnya melalui tombol *back* dan atau *forward*. Penyimpanan ini berbeda dengan *memory cache*. Asalinya nilai ditetapkan `50`, yang artinya `Firefox` akan mengingat 50 laman terakhir yang dibuka oleh tiap *tab*. Jika kita terbiasa membuka ulang *tab* (alih-alih membuka *tab* baru), ukuran riwayat *browser session* akan membengkak dengan sangat. Jadi apa yang mesti kita lakukan? Tutup *tab* jika telah selesai pada laman yang kita kunjungi dan buka *tab* baru untuk laman baru. Atau jalan lain, kita dapat menekan jumlah halaman yang disimpan `Firefox` dengan cara; buka `about:config` dan tetapkan nilai yang diinginkan di `browser.sessionhistory.max_entries`, misalnya di angka `10`.
 
  
-### *Mouse scroll*
+### **_Mouse scroll_**
 
 Untuk meningkatkan kisaran *scroll*, cari `mousewheel.min_line_scroll_amount` dan tetapkan ke nilai yang dirasa sesuai, misalnya `40`.
 
  
-### Google Safeboat
+### **Google Safeboat**
 
 Dimulai `Firefox` 32, Mozilla akan memeriksa berkas yang diunduh berdasarkan *application reputation database* dari Google.
 
@@ -53,7 +53,7 @@ Proses pemeriksaan tersebut dirasa tidak diperlukan bagi pengguna Linux, jadi ki
 * `Disable` entri `Block reported attack sites` dan `Block reported web forgeries`.
 
  
-### Off Main Thread Compositing (OMTC)
+### **Off Main Thread Compositing (OMTC)**
 
 Tujuan utama OMTC adalah untuk menggegaskan `Firefox`. Fitur ini memiliki beberapa kelebihan dibanding pendekatan `on-the-main-thread`, diantaranya:
 
@@ -103,11 +103,11 @@ export MOZ_USE_OMTC=1
 Hidupkan ulang komputer, dan jalankan `Firefox` seperti biasanya.
 
 
-### Matikan penampil PDF
+### **Matikan penampil PDF**
 
 Buka `about:config` dan tetapkan `pdfjs.disabled` ke `true`.
 
 
-### Matikan Firefox Hello
+### **Matikan Firefox Hello**
 
 Buka `about:config` dan tetapkan `loop.enabled` ke `false`.
