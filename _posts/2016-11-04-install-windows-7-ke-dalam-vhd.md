@@ -88,10 +88,6 @@ Pemasangan Windows dapat dilanjutkan sebagaimana kita biasanya memasang Windows,
 _That's it..._  
 Tinggal tunggu beberapa saat dan beberapa kali _reboot_ sampai Windows benar-benar bisa digunakan.
 
-```bash
-format fs=ntfs label="Windows 7" quick
-```
-
 Jika menginginkan installasi yang lebih singkat, atau enggan mengetik perintah-perintah, kita bisa menggunakan bantuan [WinNTSetup](http://www.msfn.org/board/topic/149612-winntsetup-v386) dan [BootICE](http://bbs.wuyou.net/forum.php?mod=viewthread&tid=57675).
 
 - Letakkan WinNTSetup dan BootICE di partisi NTFS, FAT, atau exFAT agar dapat dipanggil melalui `cmd.exe`  
