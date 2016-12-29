@@ -25,22 +25,30 @@ Setelah mencari dan mencoba banyak tutor dari internet, akhirnya saya mendapatka
 Berikut ringkasan langkah-langkah yang disarikan dari artikel tersebut:
  
 - Pasang _dependencies_ yang dibutuhkan.  
+
 ```sh
 sudo aptitude install rhc npm
 ```
+
 - Buat aplikasi baru di OpenShift. Dicontohkan aplikasi ini diberi nama `pegelcurhat`.  
+
 ```sh
 rhc create-app pegelcurhat nodejs-0.10
 ```
+
 - Tunggu proses pembuatan aplikasi selesai.  
-Setelah selesai, `rhc` akan otomatis melakukan _clone_ terhadap aplikasi yang baru dibuat ini. Sekarang saatnya masuk ke _folder_ hasil _clone_ ini.  
+Setelah selesai, `rhc` akan otomatis melakukan _clone_ terhadap aplikasi yang baru dibuat ini. Sekarang saatnya masuk ke _folder_ hasil _clone_ ini. 
+ 
 ```sh
 cd pegelcurhat
 ```
+
 - Pasang modul yang diperlukan; `node-telegram-bot-api` untuk Telegram bot API, dan `string-hash` untuk menyamarkan identitas pengirim pesan.  
+
 ```sh
 npm install -S node-telegram-bot-api string-hash
 ``` 
+
 - Buka berkas `server.js` dan ganti isinya dengan _code_ berikut dan sesuaikan bot token serta `chat_id` target (misal `chat_id` grup [@pegelcurhat](https://telegram.me/pegelcurhat)):  
 
 ```javascript
@@ -78,11 +86,13 @@ bot.onText(/\/curhat (.+)/, function (msg, match) {
 
 ```
 - Saatnya untuk _deploying_...  
+
 ```sh
 git add .
 git commit -m 'Install node-telegram-bot-api and string-hash' 
 git push
 ```
+
 Tunggu beberapa saat. Jika muncul _error_ bahwa aplikasi ini tidak mendapatkan _port_, abaikan saja karena bot ini tidak menggunakan _port_ tersebut.  
 
 - Pemasangan bot telah selesai dan kita bisa mencobanya.  
