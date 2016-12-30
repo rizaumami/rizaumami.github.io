@@ -93,7 +93,7 @@ bot.onText(/(.+)/, function (msg, match) {
       bot.sendMessage(msg.chat.id, curhat, {parse_mode: 'Markdown'});
     // selain itu
     } else {
-      bot.sendMessage(pegelcurhat, curhat, {parse_mode: 'Markdown', disable_web_page_preview: 'true'});
+      bot.sendMessage(target, curhat, {parse_mode: 'Markdown', disable_web_page_preview: 'true'});
       bot.sendMessage(msg.chat.id, "Curhat kamu telah dikirim ke @pegelcurhat 😊");
     };
   };
@@ -111,7 +111,7 @@ git push
 Tunggu beberapa saat. Jika muncul _error_ bahwa aplikasi ini tidak mendapatkan _port_, abaikan saja karena bot ini tidak menggunakan _port_ tersebut.  
 
 - Pemasangan bot telah selesai dan kita bisa mencobanya.  
-_private message_ si bot API, dan kirimkan pesan diawali dengan _string_ `/curhat`, maka si bot akan _forwarding_ pesan tersebut ke grup target.  
+_private message_ si bot API, dan ketikkan pesan kemudian kirimkan, maka si bot akan meneruskan pesan tersebut ke grup target. Pesan yang telah dikirim akan diberi _tag_ `#id` + _hashed id_ sebagai penanda agar pesan tetap unik, jika Anda risih dan merasa kurang _anonymous_ karenanya, awali pesan Anda dengan `/noid`, maka pesan tersebut tidak memiliki ciri pembeda hingga membuatnya lebih _anonymous_. 
 
 _That's it, have a nice_ curhat...  
 Jika berminat, Anda bisa bergabung dengan [@pegelcurhat](https://telegram.me/pegelcurhat) dan atau menyampaikan curhat Anda ke [@temancurhat_bot](https://telegram.me/temancurhat_bot).
