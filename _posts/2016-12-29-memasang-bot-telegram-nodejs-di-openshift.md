@@ -5,6 +5,9 @@ tags: [telegram, bot, node.js, javascript, openshift]
 comments: true
 ---
 
+> Per 08 Januari 2017, [@pegelcurhat](https://t.me/pegelcurhat) dan [@temancurhat_bot](https://t.me/temancurhat_bot) telah dihapus.
+> Artikel ini berfungsi sebagai arsip.
+
 _At first, I have a plan_...  
 Bagaimana jika membuat grup Telegram tempat curhat, berkeluh-kesah, atau menyampaikan pendapat? Mengingat manusia adalah makhluk sosial, yang memerlukan interaksi dengan manusia lain dalam kehidupannya. 
 
