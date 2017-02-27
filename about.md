@@ -10,7 +10,7 @@ This Pages is a blog about things me think is interesting, or just a quick note 
 Comments are warmly welcome, but as it's powered by [Disqus](http://disqus.com/) then you need to turn on your javascript.  
 And if that's bothered you, feel free to contact one of my contacts listed below.
 
-If you think this Pages is worth to follow, just [`click this subscribe link`](http://127.0.0.1:4000/feed.xml) to get its RSS feed.
+If you think this Pages is worth to follow, just [`click this subscribe link`]({{site.url}}/feed.xml) to get its RSS feed.
 
 Articles on this Pages are licensed as <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="display:inline; border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a>.
 
