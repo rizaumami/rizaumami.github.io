@@ -18,7 +18,7 @@ Dari sini kita mendapat kesan, bahwasanya tidak ada rekaman yang murni. Untuk ap
 Di sinilah gunanya _equalizer_, untuk memberikan kompensasi dari kekurangan-kekurangan yang dimiliki dalam menikmati musik. Jika ternyata _speaker_ atau _headphone_ yang dimiliki terlalu lantang di nada tengah, kita bisa gunakan _equalizer_ untuk menurunkan penguatan di nada tengah, kalau misal telinga kita sudah tidak terlalu peka dalam mendengar nada tinggi, kita gunakan _equalizer_ untuk memberikan penguatan lebih pada nada tinggi.
 
 Lalu, bagaimana kita bisa memasang _equalizer_ dalam sistem Linux? Maklum, sekarang komputer tidak lagi sekedar alat bekerja, namun juga sarana hiburan.  
-Ada dua cara memasang _equalizer_, pertama adalah lokal, per aplikasi, misal _plugin_ untuk `rhytmbox`, dan cara kedua adalah global, _system wide_, misal pada `pulseaudio` yang bekerja sebagai _sound server_ di mayoritas distro Linux modern.
+Ada dua cara memasang _equalizer_, pertama adalah lokal, per aplikasi, misal _plugin_ untuk `rhythmbox`, dan cara kedua adalah global, _system wide_, misal pada `pulseaudio` yang bekerja sebagai _sound server_ di mayoritas distro Linux modern.
 
 Seperti yang telah ditulis di awal, kali ini saya lebih memilih untuk memasang _equalizer_ untuk `pulseaudio`. _Here's how..._
 
@@ -28,14 +28,14 @@ Seperti yang telah ditulis di awal, kali ini saya lebih memilih untuk memasang _
   sudo aptitude install pulseaudio-equalizer
   ```
 
-- Namun tidak akna bisa langsung diguanakan karena beberapa modul yang diperlukannya belum dimuat, muat modul-modul tersebut:
+- Namun tidak akan bisa langsung digunakan karena beberapa modul yang diperlukannya belum dimuat, karenanya muat modul-modul tersebut:
 
   ```sh
   pactl load-module module-equalizer-sink
   pactl load-module module-dbus-protocol
   ```
 
-  Modul-modul tersebut mesti kita muat tiap kali sistem _rebooted_. Berikut agar kita tidak perlu repot memaut ulang modul-modul tersebut secara manual.
+  Modul-modul tersebut mesti kita muat tiap kali sistem _rebooted_. Berikut agar kita tidak perlu repot memuat ulang modul-modul tersebut secara manual.
 
   ```sh
   sudo nano /etc/pulse/default.pa
