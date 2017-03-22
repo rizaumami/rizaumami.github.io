@@ -18,13 +18,13 @@ Lalu, apa itu `zsync`? Dikutip dari [situsnya](http://zsync.moria.org.uk/); _"zs
 
 Berikut yang saya lakukan untuk memperbaharui berkas `ubuntu-16.04-desktop-amd64.iso` yang saya unduh sekitar bulan Mei menjadi `ubuntu-16.04.1-desktop-amd64.iso` yang rilis Agustus ini:
 
-<pre>
+{% highlight sh %}
 zsync -i ubuntu-16.04-desktop-amd64.iso http://kambing.ui.ac.id/iso/ubuntu/releases/16.04.1/ubuntu-16.04.1-desktop-amd64.iso.zsync  
-</pre>
+{% endhighlight %}
 
 Seperti terlihat pada _log_ di bawah ini, berkas `ubuntu-16.04-desktop-amd64.iso` dan `ubuntu-16.04.1-desktop-amd64.iso` memiliki 52,6% isi yang sama, atau sekitar 47% pembaharuan. Jadi, alih-alih mesti mengunduh 1,5GB berkas `ubuntu-16.04.1-desktop-amd64.iso`, dengan bantuan `zsync` saya hanya perlu mengunduh sekitar 700MB untuk memperbaharui `ubuntu-16.04-desktop-amd64.iso` menjadi `ubuntu-16.04.1-desktop-amd64.iso`.
 
-<pre>
+{% highlight sh %}
 zsync -i ubuntu-16.04-desktop-amd64.iso http://kambing.ui.ac.id/iso/ubuntu/releases/16.04.1/ubuntu-16.04.1-desktop-amd64.iso.zsync  
 #################### 100.0% 755.4 kBps DONE
 
@@ -46,4 +46,4 @@ downloading from http://kambing.ui.ac.id/iso/ubuntu/releases/16.04.1/ubuntu-16.0
 
 verifying download...checksum matches OK
 used 796721152 local, fetched 717338852
-</pre>
+{% endhighlight %}

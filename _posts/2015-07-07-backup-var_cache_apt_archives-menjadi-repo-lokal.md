@@ -111,7 +111,7 @@ use_online() {
 remove_old() {
   while IFS= read -r deblist
   do
-    find "$deblist"/../dists/ -type f -name Packages -print0 | xargs -0 awk '/Filename/{print $2}' > "$temp_dir/in_mirror"
+    find "$deblist"/../dists/ -type f -name Packages -print0 | xargs -0 awk '/Filename/{print $2}' > "$temp_dir/in_mirror"  
     find "$deblist"/ -type f -name "*.deb" > "$temp_dir/exist"
     grep -v -F -f "$temp_dir/in_mirror" "$temp_dir/exist" | xargs -I '{}' mv -v {} /tmp
   done <  <(find "$local_mir" -type d -iname "pool")

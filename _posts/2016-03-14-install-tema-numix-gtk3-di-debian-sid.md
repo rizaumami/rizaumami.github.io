@@ -16,32 +16,40 @@ Dan bagi mereka yang belum sanggup membeli atau menyumbang, entah karena alasan 
 Jadi, sekarang mari kita percantik tampilan Debian kita ...
 
 - _Clone_ repo Numix dari github
-{% highlight sh %}
-git clone https://github.com/shimmerproject/Numix
-{% endhighlight %}
+
+  ```sh
+  git clone https://github.com/shimmerproject/Numix
+  ```
+
 - Numix menggunakan [Sass](http://sass-lang.com/) sebagai _compiler_, karenanya install Sass terlebih dahulu
-{% highlight sh %}
-sudo apt install ruby-sass
-{% endhighlight %}
+
+  ```sh
+  sudo apt install ruby-sass
+  ```
+
 - Pasang juga _dependencies_ yang diperlukan untuk membuat biner `gresource`:
-{% highlight sh %}
-sudo apt install libxml2-utils libgdk-pixbuf2.0-dev
-{% endhighlight %}
+
+  ```sh
+  sudo apt install libxml2-utils libgdk-pixbuf2.0-dev
+  ```
+
 - Mulai kompilasi Numix
-{% highlight sh %}
-make
-sudo make install
-{% endhighlight %}
+
+  ```sh
+  make
+  sudo make install
+  ```
 
 
 Tema Numix siap digunakan.
 Ada dua cara untuk menetapkan tema Numix dalam Gnome 3;
 1. Menggunakan GUI dari paket `gnome-tweak-tool`
-2. Menggunakan perintah `gsettings` sebagai berikut:
-{% highlight sh %}
-gsettings set org.gnome.desktop.interface gtk-theme "Numix"
-gsettings set org.gnome.desktop.wm.preferences theme "Numix"
-{% endhighlight %}
+1. Menggunakan perintah `gsettings` sebagai berikut:  
+
+   ```sh  
+   gsettings set org.gnome.desktop.interface gtk-theme "Numix"  
+   gsettings set org.gnome.desktop.wm.preferences theme "Numix"  
+   ```
 
 Untuk DE lain, silahkan rujuk laman github Numix di: [https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix).
 

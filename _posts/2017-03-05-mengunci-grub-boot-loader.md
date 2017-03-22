@@ -15,14 +15,14 @@ Jika Anda juga menggunakan GRUB2 dan ingin menguncinya dari tangan yang tidak be
 Misal hasil dari enkripsi dari _password_ "ngajajaldoang" adalah seperti berikut:
 
   ```sh
-  PBKDF2 hash of your password is grub.pbkdf2.sha512.10000.64B7D4F597498B54FC0F874E01E6B91077001FD0CC351C381CA4545176706846143FABFD01375690633A97A750ADC23ACD41528F26060E3C7542E70FB6892447.065259BA24C87FFA17203F19A29351A90ACCEA9C2B6AAFA4DD2E54D8E3DFA59502ECB61717CD9B899F4E71E8FD496D6048AA4A0F83063E62363170E30D0050E2
+  PBKDF2 hash of your password is grub.pbkdf2.sha512.10000.64B7D4F597498B54FC0F874E01E6B91077001FD0CC351C381CA4545176706846143FABFD01375690633A97A750ADC23ACD41528F26060E3C7542E70FB6892447.065259BA24C87FFA17203F19A29351A90ACCEA9C2B6AAFA4DD2E54D8E3DFA59502ECB61717CD9B899F4E71E8FD496D6048AA4A0F83063E62363170E30D0050E2  
   ```
 
 - Simpan _string_ tersebut ke dalam berkas `/etc/grub.d/40_custom`, misalnya:
 
   ```sh
   set superusers="root"
-  password_pbkdf2 root grub.pbkdf2.sha512.10000.64B7D4F597498B54FC0F874E01E6B91077001FD0CC351C381CA4545176706846143FABFD01375690633A97A750ADC23ACD41528F26060E3C7542E70FB6892447.065259BA24C87FFA17203F19A29351A90ACCEA9C2B6AAFA4DD2E54D8E3DFA59502ECB61717CD9B899F4E71E8FD496D6048AA4A0F83063E62363170E30D0050E2
+  password_pbkdf2 root grub.pbkdf2.sha512.10000.64B7D4F597498B54FC0F874E01E6B91077001FD0CC351C381CA4545176706846143FABFD01375690633A97A750ADC23ACD41528F26060E3C7542E70FB6892447.065259BA24C87FFA17203F19A29351A90ACCEA9C2B6AAFA4DD2E54D8E3DFA59502ECB61717CD9B899F4E71E8FD496D6048AA4A0F83063E62363170E30D0050E2  
   ```
 
   Dapat Anda lihat, ternyata ada tambahan baris `set superusers="root"` dan `password_pbkdf2 root`. `root` di sini bukanlah `root` dalam sistem Linux yang akan kita _boot_, melainkan _username_ bagi GRUB _user_ yang akan kita kunci.
@@ -44,14 +44,14 @@ Buat pengecualian pada entri tertentu dengan cara menambahkan `--unrestricted` p
   Hasilnya akan mirip seperti berikut:
   
   ```sh
-  132:      echo "menuentry '$(echo "$title" | grub_quote)' ${CLASS} \$menuentry_id_option 'gnulinux-$version-$type-$boot_device_id' {" | sed "s/^/$submenu_indentation/"
+  132:      echo "menuentry '$(echo "$title" | grub_quote)' ${CLASS} \$menuentry_id_option 'gnulinux-$version-$type-$boot_device_id' {" | sed "s/^/$submenu_indentation/"  
   134:      echo "menuentry '$(echo "$os" | grub_quote)' ${CLASS} \$menuentry_id_option 'gnulinux-simple-$boot_device_id' {" | sed "s/^/$submenu_indentation/"
   ```
   
   Sisipkan `--unrestricted` pada baris `132` dan `134` berkas `/etc/grub.d/10_linux` sesuai pencarian `grep` di atas:
   
   ```sh
-  132:      echo "menuentry '$(echo "$title" | grub_quote)' ${CLASS} \$menuentry_id_option 'gnulinux-$version-$type-$boot_device_id' --unrestricted {" | sed "s/^/$submenu_indentation/"
+  132:      echo "menuentry '$(echo "$title" | grub_quote)' ${CLASS} \$menuentry_id_option 'gnulinux-$version-$type-$boot_device_id' --unrestricted {" | sed "s/^/$submenu_indentation/"  
   134:      echo "menuentry '$(echo "$os" | grub_quote)' ${CLASS} \$menuentry_id_option 'gnulinux-simple-$boot_device_id' --unrestricted {" | sed "s/^/$submenu_indentation/"
   ```
   

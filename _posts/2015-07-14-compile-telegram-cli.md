@@ -13,64 +13,64 @@ Tampilan spartan `telegram-cli` memang membuat jengah kita yang hendak bertelegr
 
 * Klon repo tg.  
 
-{% highlight sh %}
-git clone --recursive https://github.com/vysheng/tg.git && cd tg
-{% endhighlight %}
+  ```sh
+  git clone --recursive https://github.com/vysheng/tg.git && cd tg
+  ```
 
 * Pasang paket *dependency* bagi proses kompilasi.  
 
-{% highlight sh %}
-sudo aptitude install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson-dev libpython-dev make 
-{% endhighlight %}
+  ```sh
+  sudo aptitude install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson-dev libpython-dev make 
+  ```
 
 * Berpindah ke dalam map repo hasil klon.  
 
-{% highlight sh %}
-cd tg
-{% endhighlight %}
+  ```sh
+  cd tg
+  ```
 
 * Berkas `debian/changelog` tidak mencerminkan versi terkini dari `telegram-cli` sebagaimana tercantum dalam berkas `CHANGELOG`.  
 Karenanya baik kita sunting berkas `debian/changelog` dari semula  
 
-{% highlight sh %}
-telegram-cli (1.0.6-1) unstable; urgency=low
+  ```sh
+  telegram-cli (1.0.6-1) unstable; urgency=low
 
-  * Upstream update version
-  * Inpliment -e option
+    * Upstream update version
+    * Inpliment -e option
 
- -- Steve Illichevsky <still.ru@gmail.com>  Sat, 11 Oct 2014 08:47:07 +0400
+   -- Steve Illichevsky <still.ru@gmail.com>  Sat, 11 Oct 2014 08:47:07 +0400
 
- telegram-cli (1.0.5.1-1) unstable; urgency=low
+   telegram-cli (1.0.5.1-1) unstable; urgency=low
 
-  * Initial release
+    * Initial release
 
- -- Steve Illichevsky <still.ru@gmail.com>  Sun, 05 Oct 2014 09:37:06 +0400
-{% endhighlight %}  
+   -- Steve Illichevsky <still.ru@gmail.com>  Sun, 05 Oct 2014 09:37:06 +0400
+  ```  
 
-Menjadi, misalnya
+  Menjadi, misalnya
 
-{% highlight sh %}
-telegram-cli (1.3.3) unstable; urgency=low
+  ```sh
+  telegram-cli (1.3.3) unstable; urgency=low
 
-  * support for sending custom keyboard 
-  * fixed contact_search
-  * TGL-2.0.3
+    * support for sending custom keyboard 
+    * fixed contact_search
+    * TGL-2.0.3
 
- -- Sahri Riza Umami <riza@openmailbox.org>  Fri, 20 Nov 2015 16:16:28 +0700
-{% endhighlight %}
+   -- Sahri Riza Umami <riza@openmailbox.org>  Fri, 20 Nov 2015 16:16:28 +0700
+  ```
 
 * Mulai proses kompilasi.
 
-{% highlight sh %}
-dpkg-buildpackage -uc -us -b -rfakeroot
-{% endhighlight %}
+  ```sh
+  dpkg-buildpackage -uc -us -b -rfakeroot
+  ```
 
 * Jika kompilasi lancar, akan menghasilkan berkas `telegram-cli_1.3.3_amd64.deb` di luar map `tg`.  
 
-Pasang `telegram-cli` menggunakan perintah:
+* Pasang `telegram-cli` menggunakan perintah:
 
-{% highlight sh %}
-sudo dpkg -i telegram-cli_1.3.3-1_amd64.deb
-{% endhighlight %}
+  ```sh
+  sudo dpkg -i telegram-cli_1.3.3-1_amd64.deb
+  ```
 
 *Let's telegramming like a 1337...* :sweat_smile:

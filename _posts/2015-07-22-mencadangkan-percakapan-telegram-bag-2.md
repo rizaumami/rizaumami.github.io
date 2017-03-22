@@ -16,45 +16,46 @@ Cara berikut adalah sama dengan cara di artikel yang lalu; yakni dengan menjadik
 * Pasang `telegram-cli`.
 
 * Jalankan sebagai `daemon`.
-{% highlight sh %}
-telegram-cli -vvvvRCf -k tg-server.pub -L ~/Documents/telegram.log -WdP 1337 &
-{% endhighlight %}
 
-Perintah tersebut akan menjalankan `telegram-cli` sebagai *daemon* dan membuka soket UDP `1337` dan menyimpan rekaman percakapan di `~/Documents/telegram.log`.
+  ```sh
+  telegram-cli -vvvvRCf -k tg-server.pub -L ~/Documents/telegram.log -WdP 1337 &  
+  ```
+
+  Perintah tersebut akan menjalankan `telegram-cli` sebagai *daemon* dan membuka soket UDP `1337` dan menyimpan rekaman percakapan di `~/Documents/telegram.log`.
 
 * Berkas `log` adalah berisi semua percakapan pada akun Telegram serta `stdout` dari `telegram-cli`, jadi tidak teratur dan terkelompokkan.
 
   Untuk mendapatkan `log` yang rapi, kita harus menyaringnya. Misal menggunakan `awk` seperti perintah berikut:
 
-{% highlight sh %}
-awk '!/ is typing in chat | [(]was online | marked read | is uploading |\x0|^got SIGHUP.|^ \*\*../' ~/Documents/telegram.log | awk '/^\[..:..\]/ { p = $2 == "PegeLinux" } p' | awk -F'»»»|>>>' '{gsub(/]  PegeLinux /,"] ")}{printf "%-30s%s\n", $1,$2}' > pegelinux-$(date +%y%m%d-%H.%M).log
-{% endhighlight %}
+  ```sh
+  awk '!/ is typing in chat | [(]was online | marked read | is uploading |\x0|^got SIGHUP.|^ \*\*../' ~/Documents/telegram.log | awk '/^\[..:..\]/ { p = $2 == "PegeLinux" } p' | awk -F'»»»|>>>' '{gsub(/]  PegeLinux /,"] ")}{printf "%-30s%s\n", $1,$2}' > pegelinux-$(date +%y%m%d-%H.%M).log  
+  ```
 
-*Well, what a shitty command, but it's work ...*
+  *Well, what a shitty command, but it's work ...*
 
-Perintah `awk` pertama akan membuang baris dengan *string* `is typing in chat`, `(was online`, `marked read `, `is uploading`, `got SIGHUP`, dan `***`.
+  Perintah `awk` pertama akan membuang baris dengan *string* `is typing in chat`, `(was online`, `marked read `, `is uploading`, `got SIGHUP`, dan `***`.
 
-Perintah `awk` kedua akan menampilkan semua baris yang mengandung kata **PegeLinux** juga baris di bawahnya hingga akhirnya menemukan kembali baris dengan kata **PegeLinux** di dalamnya.
+  Perintah `awk` kedua akan menampilkan semua baris yang mengandung kata **PegeLinux** juga baris di bawahnya hingga akhirnya menemukan kembali baris dengan kata **PegeLinux** di dalamnya.
 
-Perintah `awk` ketiga akan mengganti semua *string* `]  PegeLinux ` dengan `]` dan menggeser kolom kedua 30 karakter ke kanan.
+  Perintah `awk` ketiga akan mengganti semua *string* `]  PegeLinux ` dengan `]` dan menggeser kolom kedua 30 karakter ke kanan.
 
-Ketiga `awk` tersebut akan menghasilkan berkas `log` yang lebih rapi di pegelinux-$(date +%y%m%d-%H.%M).log, yang namanya berubah sesuai waktu perintah dijalankan.
+  Ketiga `awk` tersebut akan menghasilkan berkas `log` yang lebih rapi di pegelinux-$(date +%y%m%d-%H.%M).log, yang namanya berubah sesuai waktu perintah dijalankan.
 
 * Untuk mematikan proses `telegram-cli`, jika Anda lupa mencatat `PID` pada langkah sebelumnya, gunakan perintah berikut:
 
-{% highlight sh %}
-ps aux | grep telegram-cli
-{% endhighlight %}
+  ```sh
+  ps aux | grep telegram-cli
+  ```
 
-Misal hasilnya sebagai berikut:
+  Misal hasilnya sebagai berikut:
 
-{% highlight sh %}
-iza      28367  0.0  0.0 264744 12300 pts/0    S    16:26   0:00 bin/telegram-cli -vvvvRC -k tg-server.pub -WdP 1337
-iza      28672  0.0  0.0  12728  2204 pts/2    S+   17:05   0:00 grep --color=auto telegram-cli
-{% endhighlight %}
+  ```sh
+  iza      28367  0.0  0.0 264744 12300 pts/0    S    16:26   0:00 bin/telegram-cli -vvvvRC -k tg-server.pub -WdP 1337  
+  iza      28672  0.0  0.0  12728  2204 pts/2    S+   17:05   0:00 grep --color=auto telegram-cli  
+  ```
 
-Matikan proses menggunakan perintah:
+  Matikan proses menggunakan perintah:
 
-{% highlight sh %}
-kill -9 28367
-{% endhighlight %}
+  ```sh
+  kill -9 28367
+  ```

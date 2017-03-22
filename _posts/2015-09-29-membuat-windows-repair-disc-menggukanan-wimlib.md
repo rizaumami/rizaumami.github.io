@@ -13,23 +13,23 @@ Selalu sedia media untuk melakukan *backup* dan *recovery*. Media tersebut dapat
 1. Install [wimlib](http://rizaumami.github.io/2015/07/09/compile-wimlib-di-debian-sid/).
 2. Kaitkan berkas ISO Windows, misal di `/mnt/iso`.
 
-{% highlight sh %}
-sudo mount Windows7_Ultimate_x64_SP1.iso /mnt/iso/
-{% endhighlight %}
+   ```sh
+   sudo mount Windows7_Ultimate_x64_SP1.iso /mnt/iso/
+   ```
 
-Gunakan *script* `mkwinpeimg` dari `wimlib` untuk membuat berkas `WinPE`.
+3. Gunakan *script* `mkwinpeimg` dari `wimlib` untuk membuat berkas `WinPE`.
 
-{% highlight sh %}
-mkwinpeimg -i -a amd64 -W /mnt/iso /tmp/Repair_disc_Windows_7_64-bit.iso
-{% endhighlight %}
+   ```sh
+   mkwinpeimg -i -a amd64 -W /mnt/iso /tmp/Repair_disc_Windows_7_64-bit.iso
+   ```
 
-Perintah di atas mungkin akan terhenti karena galat `mkwinpeimg` yang membutuhkan `mkisofs` yang tidak ada dalam repo Sid ketika artikel ini ditulis. Solusinya kita buat *softlink* `mkisofs` ke `genisoimage`.
-
-{% highlight sh %}
-sudo ln -s /usr/bin/genisoimage /usr/bin/mkisofs
-{% endhighlight %}
-
-Kemudian jalankan ulang perintah `mkwinpeimg` di atas.
+   Perintah di atas mungkin akan terhenti karena galat `mkwinpeimg` yang membutuhkan `mkisofs` yang tidak ada dalam repo Sid ketika artikel ini ditulis. Solusinya kita buat *softlink* `mkisofs` ke `genisoimage`.
+  
+   ```sh
+   sudo ln -s /usr/bin/genisoimage /usr/bin/mkisofs
+   ```
+  
+  Kemudian jalankan ulang perintah `mkwinpeimg` di atas.
 
 *That's it*. Berkas `Repair_disc_Windows_7_64-bit.iso` yang berhasil dibuat dapat di `dd` atau *burn* ke cakram optik sebagai media *backup* dan *recovery*.
 
@@ -40,9 +40,9 @@ Berkas ditambahkan ke `boot.wim` dengan cara *overlay*, jadi pastikan susunan di
 1. Jalankan langkah 1-2 di atas.
 2. Gunakan perintah berikut untuk melakukan *overlay*.
 
-{% highlight sh %}
-mkwinpeimg -i -a amd64 -W /mnt/iso -O /tmp/OVERLAY /tmp/Repair_disc_Windows_7_64-bit.iso
-{% endhighlight %}
+   ```sh
+   mkwinpeimg -i -a amd64 -W /mnt/iso -O /tmp/OVERLAY /tmp/Repair_disc_Windows_7_64-bit.iso  
+   ```
 
 *Done!*
 

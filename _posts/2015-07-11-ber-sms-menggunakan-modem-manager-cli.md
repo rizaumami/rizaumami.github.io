@@ -19,7 +19,7 @@ Misal keluarannya adalah sebagai berikut:
 
 {% highlight sh %}
 Found 1 modems:
-	/org/freedesktop/ModemManager1/Modem/4 [Sierra Wireless Inc] Sierra Wireless MC8355 - Gobi 3000(TM) Module
+  /org/freedesktop/ModemManager1/Modem/4 [Sierra Wireless Inc] Sierra Wireless MC8355 - Gobi 3000(TM) Module  
 {% endhighlight %}
 
 Berarti nomor modemnya adalah **4**.
@@ -60,19 +60,19 @@ sudo mmcli -m 4 --messaging-list-sms
 Keluarannya akan serupa dengan:
 {% highlight sh %}
 Found 13 SMS messages:
-	/org/freedesktop/ModemManager1/SMS/13 (received)
-	/org/freedesktop/ModemManager1/SMS/14 (received)
-	/org/freedesktop/ModemManager1/SMS/15 (received)
-	/org/freedesktop/ModemManager1/SMS/16 (received)
-	/org/freedesktop/ModemManager1/SMS/17 (received)
-	/org/freedesktop/ModemManager1/SMS/18 (received)
-	/org/freedesktop/ModemManager1/SMS/19 (received)
-	/org/freedesktop/ModemManager1/SMS/20 (received)
-	/org/freedesktop/ModemManager1/SMS/21 (received)
-	/org/freedesktop/ModemManager1/SMS/22 (received)
-	/org/freedesktop/ModemManager1/SMS/23 (received)
-	/org/freedesktop/ModemManager1/SMS/24 (received)
-	/org/freedesktop/ModemManager1/SMS/25 (received)
+  /org/freedesktop/ModemManager1/SMS/13 (received)
+  /org/freedesktop/ModemManager1/SMS/14 (received)
+  /org/freedesktop/ModemManager1/SMS/15 (received)
+  /org/freedesktop/ModemManager1/SMS/16 (received)
+  /org/freedesktop/ModemManager1/SMS/17 (received)
+  /org/freedesktop/ModemManager1/SMS/18 (received)
+  /org/freedesktop/ModemManager1/SMS/19 (received)
+  /org/freedesktop/ModemManager1/SMS/20 (received)
+  /org/freedesktop/ModemManager1/SMS/21 (received)
+  /org/freedesktop/ModemManager1/SMS/22 (received)
+  /org/freedesktop/ModemManager1/SMS/23 (received)
+  /org/freedesktop/ModemManager1/SMS/24 (received)
+  /org/freedesktop/ModemManager1/SMS/25 (received)
 {% endhighlight %}
 
 Tampak bahwa ada 13 SMS yang diterima dan tidak ada yang telah dikirim.
@@ -90,7 +90,7 @@ Hasil bacaannya tampak seperti berikut:
 SMS '/org/freedesktop/ModemManager1/SMS/20'
   -----------------------------------
   Content    |              number: 'INDOSAT'
-             |                text: 'Pkt Super Internet Kuota Rp29.9rb/30hr Anda brakhir pd 23-06-2015 22:21.Pastikan pulsa cukup utk prpanjangan agar tdk trkena tarif internet retail.Info pkt trbaru www.indosat.com'
+             |                text: 'Pkt Super Internet Kuota Rp29.9rb/30hr Anda brakhir pd 23-06-2015 22:21.Pastikan pulsa cukup utk prpanjangan agar tdk trkena tarif internet retail.Info pkt trbaru www.indosat.com'  
   -----------------------------------
   Properties |            PDU type: 'deliver'
              |               state: 'received'
@@ -115,7 +115,7 @@ Anda mungkin akan ditanya *password*. Jika berhasil akan tampak pesan:
 
 {% highlight sh %}
 Successfully created new SMS:
-	/org/freedesktop/ModemManager1/SMS/26 (unknown)
+  /org/freedesktop/ModemManager1/SMS/26 (unknown)
 {% endhighlight %}
 
 ### Menyimpan SMS
@@ -157,20 +157,20 @@ mmcli -m 4 --messaging-list-sms
 Kita akan lihat SMS telah bertambah:
 {% highlight sh %}
 Found 14 SMS messages:
-	/org/freedesktop/ModemManager1/SMS/13 (received)
-	/org/freedesktop/ModemManager1/SMS/14 (received)
-	/org/freedesktop/ModemManager1/SMS/15 (received)
-	/org/freedesktop/ModemManager1/SMS/16 (received)
-	/org/freedesktop/ModemManager1/SMS/17 (received)
-	/org/freedesktop/ModemManager1/SMS/18 (received)
-	/org/freedesktop/ModemManager1/SMS/19 (received)
-	/org/freedesktop/ModemManager1/SMS/20 (received)
-	/org/freedesktop/ModemManager1/SMS/21 (received)
-	/org/freedesktop/ModemManager1/SMS/22 (received)
-	/org/freedesktop/ModemManager1/SMS/23 (received)
-	/org/freedesktop/ModemManager1/SMS/24 (received)
-	/org/freedesktop/ModemManager1/SMS/25 (received)
-	/org/freedesktop/ModemManager1/SMS/26 (stored)
+  /org/freedesktop/ModemManager1/SMS/13 (received)
+  /org/freedesktop/ModemManager1/SMS/14 (received)
+  /org/freedesktop/ModemManager1/SMS/15 (received)
+  /org/freedesktop/ModemManager1/SMS/16 (received)
+  /org/freedesktop/ModemManager1/SMS/17 (received)
+  /org/freedesktop/ModemManager1/SMS/18 (received)
+  /org/freedesktop/ModemManager1/SMS/19 (received)
+  /org/freedesktop/ModemManager1/SMS/20 (received)
+  /org/freedesktop/ModemManager1/SMS/21 (received)
+  /org/freedesktop/ModemManager1/SMS/22 (received)
+  /org/freedesktop/ModemManager1/SMS/23 (received)
+  /org/freedesktop/ModemManager1/SMS/24 (received)
+  /org/freedesktop/ModemManager1/SMS/25 (received)
+  /org/freedesktop/ModemManager1/SMS/26 (stored)
 {% endhighlight %}
 
 Untuk melihat balasan SMS kita mesti rajin memeriksa daftar SMS karena `mmcli` tidak memiliki *notification*.

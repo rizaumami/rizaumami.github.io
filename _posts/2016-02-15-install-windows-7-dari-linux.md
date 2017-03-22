@@ -21,10 +21,10 @@ HDD telah diganti SSD dan diformat menjadi 4 partisi; 2 NTFS dan 2 ext4.
 Sayangnya, setelah rilis Windows 10 kita tidak lagi bisa mengunduh berkas ISO Microsoft Windows 7 secara resmi dari Digital River. _So, now you're on your own_...  
 2. Install paket `wimtools`.  
 `wimtools` adalah perkakas untuk memanipulasi berkas `WIM` (_Windows Imaging_) yang biasa digunakan dalam _installer_ Windows.  
-{% highlight sh %}
-aptitude install wimtools
-{% endhighlight %}  
 
+   ```sh
+   aptitude install wimtools
+   ```  
 
 **Siapkan Partisi Windows**
 
@@ -39,33 +39,44 @@ Sebenarnya dalam kasus kita tidak akan berpengaruh banyak, karena kita akan meng
 **Install Windows**
 
 - Buat titik kait untuk bekerja sementara dengan ISO dan partisi Windows.  
-{% highlight sh %}
-mkdir /tmp/{iso,hdd}
-{% endhighlight %}  
+
+  ```sh
+  mkdir /tmp/{iso,hdd}
+  ```  
+
 - Kaitkan berkas ISO Windows 7.  
-{% highlight sh %}
-mount -o loop windows_iso /tmp/iso
-{% endhighlight %}  
+
+  ```sh
+  mount -o loop windows_iso /tmp/iso
+  ```  
+
 - Terdapat banyak edisi Windows dalam sebuah berkas ISO, ketahui _index_ edisi Windows dengan perintah:  
-{% highlight sh %}
-wimlib-imagex info /tmp/iso/sources/install.wim
-{% endhighlight %}  
+
+  ```sh
+  wimlib-imagex info /tmp/iso/sources/install.wim
+  ```  
+
 - Misal jika kita hendak memasang edisi _Ultimate_ yang ada di indeks ke-5 ke partisi `/dev/sda2`:  
-{% highlight sh %}
-wimlib-imagex apply /tmp/iso/sources/install.wim 5 /dev/sda2
-{% endhighlight %}  
--  Kaitkan partisi Windows untuk mempersiapkan berkas yang dibutuhkan partisi tersebut agar bisa _boot_.  
-{% highlight sh %}
-mount /dev/sda2 /tmp/hdd
-mkdir /tmp/hdd/sources
-cp -r /tmp/hdd/Windows/Boot/PCAT /tmp/hdd/Boot
-cp /tmp/hdd/Boot/bootmgr /tmp/hdd
-{% endhighlight %}  
-Sayangnya belum ada aplikasi Linux yang mampu menyunting berkas `BCD`, karenanya, agar partisi Windows ini mampu _booting_ sementara kita pakai `BCD` dan berkas _recovery_ (`winRE.wim`) dari berkas ISO agar nanti partisi _boot_ ke _Windows Recovery Environment_ dan kita memperbaiki `BCD` dari sana.  
-{% highlight sh %}
-cp /tmp/hdd/Windows/Boot/DVD/PCAT/{boot.sdi,BCD} /tmp/hdd/Boot
-cp /tmp/hdd/Windows/System32/Recovery/winRE.wim /tmp/hdd/sources/boot.wim
-{% endhighlight %}
+
+  ```sh
+  wimlib-imagex apply /tmp/iso/sources/install.wim 5 /dev/sda2
+  ```  
+
+- Kaitkan partisi Windows untuk mempersiapkan berkas yang dibutuhkan partisi tersebut agar bisa _boot_.  
+
+  ```sh
+  mount /dev/sda2 /tmp/hdd
+  mkdir /tmp/hdd/sources
+  cp -r /tmp/hdd/Windows/Boot/PCAT /tmp/hdd/Boot
+  cp /tmp/hdd/Boot/bootmgr /tmp/hdd
+  ``` 
+ 
+  Sayangnya belum ada aplikasi Linux yang mampu menyunting berkas `BCD`, karenanya, agar partisi Windows ini mampu _booting_ sementara kita pakai `BCD` dan berkas _recovery_ (`winRE.wim`) dari berkas ISO agar nanti partisi _boot_ ke _Windows Recovery Environment_ dan kita memperbaiki `BCD` dari sana.  
+
+  ```sh
+  cp /tmp/hdd/Windows/Boot/DVD/PCAT/{boot.sdi,BCD} /tmp/hdd/Boot
+  cp /tmp/hdd/Windows/System32/Recovery/winRE.wim /tmp/hdd/sources/boot.wim
+  ```
 
 **Langkah Tambahan, _unattendend install_**
 
@@ -76,24 +87,24 @@ Rujuk laman [technet.microsoft.com](http://technet.microsoft.com/en-us/library/c
 
 Salin berkas jawaban yang telah dibuat:
 
-{% highlight sh %}
+```sh
 cp Unattend.xml  /tmp/hdd/Windows/System32/sysprep
-{% endhighlight %}  
+```  
 
 Berkas `Unattend.xml` dapat berisi data yang penting, karenanya baik kita buat _script_ untuk menghapusnya jika pemasangan Windows telah usai.  
 Buat sebuah _script_, misalnya `SetupComplete.cmd` untuk menghaapus berkas yang tidak lagi diperlukan, bahkan untuk menerapkan _registry tweaking_.
-{% highlight sh %}
+```sh
 mkdir /tmp/hdd/Windows/Setup/Scripts
 cp SetupComplete.cmd /tmp/hdd/Windows/Setup/Scripts
-{% endhighlight %}  
+```  
 
 **_Finishing_**
 
 Proses pemasangan Windows telah selesai. Lepaskan partisi dan berkas ISO Windows dari kaitannya.  
 Masukkan partisi Windows 7 ke dalam GRUB:
-{% highlight sh %}
+```sh
 sudo update-grub
-{% endhighlight %}  
+```  
 
 **_Reboot_**
 

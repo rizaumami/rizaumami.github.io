@@ -143,7 +143,7 @@ strftime("Date\t\t\t\t\t: %d %B %Y"),\
 "Horizontal dilution of position\t\t: "$9,\
 "Altitude, above mean sea level\t\t: "$10"m",\
 "Height of geoid above WGS84 ellipsoid\t: "$12,\
-"Google Maps URL\t\t\t\t: ","\thttps://maps.google.com/maps?t=k&q=loc:-"(substr($3,0,2)+(substr($3,3)/60.0))"+"(substr($5,0,3)+(substr($5,4)/60.0)); fflush();}' <(mmcli -m "$MODEM" --location-get-gps-nmea)
+"Google Maps URL\t\t\t\t: ","\thttps://maps.google.com/maps?t=k&q=loc:-"(substr($3,0,2)+(substr($3,3)/60.0))"+"(substr($5,0,3)+(substr($5,4)/60.0)); fflush();}' <(mmcli -m "$MODEM" --location-get-gps-nmea)  
 }
 
 get_gsa() {
@@ -183,7 +183,7 @@ awk -F, -v OFS='\n' '/\$GPRMC/ {print \
 "Track angle\t\t\t: "$9"\xc2\xb0",\
 "Date\t\t\t\t: "(substr($10,0,2))"-"(substr($10,3,2))"-"(substr($10,5,2)),\
 "Magnetic Variation\t\t: "$11,\
-"Google Maps URL\t\t\t: ","\thttps://maps.google.com/maps?t=k&q=loc:-"(substr($4,0,2)+(substr($4,3)/60.0))"+"(substr($6,0,3)+(substr($6,4)/60.0)); fflush();}' <(mmcli -m "$MODEM" --location-get-gps-nmea)
+"Google Maps URL\t\t\t: ","\thttps://maps.google.com/maps?t=k&q=loc:-"(substr($4,0,2)+(substr($4,3)/60.0))"+"(substr($6,0,3)+(substr($6,4)/60.0)); fflush();}' <(mmcli -m "$MODEM" --location-get-gps-nmea)  
 }
 
 get_vtg() {

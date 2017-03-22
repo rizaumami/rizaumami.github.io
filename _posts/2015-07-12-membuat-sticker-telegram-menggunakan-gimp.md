@@ -30,13 +30,13 @@ Pilih *layer* dasar dengan menekan kunci `END` atau klik *layer* pada *layer dia
 
 * Gunakan `Fuzzy Select Tool` untuk menghapus area yang tidak diinginkan. Untuk memperluas area cakupan `Fuzzy Select Tool`, bisa dengan sambil menekan kunci `SHIFT` atau setelah menekan *mouse* dilanjutkan menggeser `mouse` ke kiri-kanan.
 
-[![Antarmuka GIMP](http://i.imgur.com/g0b4jrw.png)](http://i.imgur.com/g0b4jrw.png)
+  [![Antarmuka GIMP](http://i.imgur.com/g0b4jrw.png)](http://i.imgur.com/g0b4jrw.png)
 
 * Jika dirasa telah cukup. Saatnya untuk memberi batas putih di pinggiran gambar.
 Pilih area (*transparent*) di luar gambar menggunakan `Fuzzy Select Tool`, jangan lupa centang *Feather edges* pada `Fuzzy Select Tool` *option*. Kemudian balik (*invert*) pilihan menggunakan `CTRL+I`.
 
-Tukar *foreground* dan *background* hingga *foreground* menjadi warna putih.
-Beri garis putih setebal 6px pada pinggiran gambar menggunakan `Edit - Stroke Selection..`.
+  Tukar *foreground* dan *background* hingga *foreground* menjadi warna putih.
+  Beri garis putih setebal 6px pada pinggiran gambar menggunakan `Edit - Stroke Selection..`.
 
 * Hapus *layer* yang tidak terpakai
 
@@ -46,21 +46,21 @@ Beri garis putih setebal 6px pada pinggiran gambar menggunakan `Edit - Stroke Se
 
 * Rubah berkas PNG ke webp menggunakan perintah:
 
-{% highlight sh %}
-cwebp -lossless <gambar_masukan> -o <gambar_stiker>.webp
-{% endhighlight %}
+  ```sh
+  cwebp -lossless <gambar_masukan> -o <gambar_stiker>.webp
+  ```
+  
+  Atau jika Anda menggunakan Gnome, bisa membuat `nautilus` *script*;
 
-Atau jika Anda menggunakan Gnome, bisa membuat `nautilus` *script*;
+  ```sh
+  #!/bin/bash
 
-{% highlight sh %}
-#!/bin/bash
-
-while [ $# -gt 0 ]; do
-	picture=$1
-	cwebp -lossless "$picture" -o "${picture%.*}.webp"
-	shift
-done
-{% endhighlight %}
+  while [ $# -gt 0 ]; do
+    picture=$1
+    cwebp -lossless "$picture" -o "${picture%.*}.webp"
+    shift
+  done
+  ```
 
 Simpan di `$HOME/.local/share/nautilus/scripts`. Tiap kali hendak merubah gambar menjadi stiker, tinggal klik `kanan gambar - Scripts` dan pilih *script*.
 

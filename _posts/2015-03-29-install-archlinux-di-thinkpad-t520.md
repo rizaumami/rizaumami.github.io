@@ -12,7 +12,7 @@ Saya lebih senang mendapatkan paket terkini daripada menunggu sistem stabil, jad
 Langkah pertama tentu mendapatkan media untuk pemasangan, bisa berupa berkas ISO atau citra *bootstrap*. Berkas ISO berukuran lumayan besar dan kita harus tetap melakukan *update*, jadi daripada membuang *bandwidth* lebih baik kita mengunduh citra `bootstrap` yang berukuran lebih kecil.
 
 {% highlight sh %}
-wget -c http://suro.ubaya.ac.id/archlinux/iso/2015.06.01/archlinux-bootstrap-2015.06.01-x86_64.tar.gz
+wget -c http://suro.ubaya.ac.id/archlinux/iso/2015.06.01/archlinux-bootstrap-2015.06.01-x86_64.tar.gz  
 {% endhighlight %}
 
 Semua langkah di bawah lakukan sebagai *root*

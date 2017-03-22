@@ -12,43 +12,63 @@ Telah ada upaya mengurangi permasalahan ini, misal dengan menggunakan huruf serb
 
 Gunakan perintah berikut untuk memasang;
 
-- Liberation  {% highlight sh %}
-sudo aptitude install fonts-liberation
-{% endhighlight %}
-- Croscore  {% highlight sh %}
-sudo aptitude install fonts-croscore
-{% endhighlight %}
-- Microsoft Core  {% highlight sh %}
-sudo aptitude install ttf-mscorefonts-installer
-{% endhighlight %}
+- Liberation  
 
-Sayangnya, versi huruf dari [*Core Fonts*](https://en.wikipedia.org/wiki/Core_fonts_for_the_Web) telah tertinggal jauh dari huruf yang sama yang berada dalam sistem Windows teranyar.  
-Artikel ini akan menjelaskan langkah bagaimana mendapatkan huruf Microsoft Windows 10 dari berkas *installer*-nya. Patut diingat, [*Core Fonts*](https://en.wikipedia.org/wiki/Core_fonts_for_the_Web) dilisensikan untuk bebas digunakan, sementara dalam artikel ini kita akan mengambil langsung dari berkas *installer* bahkan dengan tanpa memasang sistem operasi Windows. Menurut hemat saya, selama kita memiliki lisensi Windows 10, baik dari membeli baru atau hasil *upgrade*, maka kita berhak atas kandungan Windows tersebut. *But, I'm not a lawyer*...
+  ```sh
+  sudo aptitude install fonts-liberation
+  ```
+
+- Croscore  
+
+  ```sh
+  sudo aptitude install fonts-croscore
+  ```
+
+- Microsoft Core  
+
+  ```sh
+  sudo aptitude install ttf-mscorefonts-installer
+  ```
+  
+  Sayangnya, versi huruf dari [*Core Fonts*](https://en.wikipedia.org/wiki/Core_fonts_for_the_Web) telah tertinggal jauh dari huruf yang sama yang berada dalam sistem Windows teranyar.  
+  Artikel ini akan menjelaskan langkah bagaimana mendapatkan huruf Microsoft Windows 10 dari berkas *installer*-nya. Patut diingat, [*Core Fonts*](https://en.wikipedia.org/wiki/Core_fonts_for_the_Web) dilisensikan untuk bebas digunakan, sementara dalam artikel ini kita akan mengambil langsung dari berkas *installer* bahkan dengan tanpa memasang sistem operasi Windows. Menurut hemat saya, selama kita memiliki lisensi Windows 10, baik dari membeli baru atau hasil *upgrade*, maka kita berhak atas kandungan Windows tersebut. *But, I'm not a lawyer*...
 
 * Unduh berkas ISO Microsoft Windows 10 di [http://www.microsoft.com/en-us/software-download/windows10ISO](http://www.microsoft.com/en-us/software-download/windows10ISO).
 
-* Pasang `wimlib`. `wimlib` sudah ada dalam repo Sid. Namun jika Anda menggunakan Debian Jessie, silahkan rujuk artikel [Compile wimlib di Debian Sid](http://rizaumami.github.io/2015/07/09/compile-wimlib-di-debian-sid/).  {% highlight sh %}
-sudo aptitude install wimlib
-{% endhighlight %}
+* Pasang `wimlib`. `wimlib` sudah ada dalam repo Sid. Namun jika Anda menggunakan Debian Jessie, silahkan rujuk artikel [Compile wimlib di Debian Sid](http://rizaumami.github.io/2015/07/09/compile-wimlib-di-debian-sid/).  
 
-* Kaitkan berkas ISO.  {% highlight sh %}
-sudo mount Win10_English_x64.iso /mnt/iso
-{% endhighlight %}
+  ```sh
+  sudo aptitude install wimlib
+  ```
 
-* Buat map khusus huruf Microsoft di `/usr/share/fonts/truetype`  {% highlight sh %}
-sudo install -dm755 /usr/share/fonts/truetype/windows10
-{% endhighlight %}
+* Kaitkan berkas ISO.  
 
-* Ambil huruf hanya *truetype* ISO dan simpan di `/usr/share/fonts/truetype/windows10`  {% highlight sh %}
-sudo wimextract /mnt/iso/sources/install.wim 1 /Windows/Fonts/"*".ttf --dest-dir /usr/share/fonts/truetype/windows10
-{% endhighlight %}
+  ```sh
+  sudo mount Win10_English_x64.iso /mnt/iso
+  ```
 
-* Mutakhirkan *font cache*  {% highlight sh %}
-sudo fc-cache -s
-{% endhighlight %}
+* Buat map khusus huruf Microsoft di `/usr/share/fonts/truetype`  
 
-* Lepaskan berkas ISO dari kaitan.  {% highlight sh %}
-sudo umount /mnt/iso
-{% endhighlight %}
+  ```sh
+  sudo install -dm755 /usr/share/fonts/truetype/windows10
+  ```
+
+* Ambil huruf hanya *truetype* ISO dan simpan di `/usr/share/fonts/truetype/windows10`  
+
+  ```sh
+  sudo wimextract /mnt/iso/sources/install.wim 1 /Windows/Fonts/"*".ttf --dest-dir /usr/share/fonts/truetype/windows10  
+  ```
+
+* Mutakhirkan *font cache*  
+
+  ```sh
+  sudo fc-cache -s
+  ```
+
+* Lepaskan berkas ISO dari kaitan.  
+
+  ```sh
+  sudo umount /mnt/iso
+  ```
 
 *Done!*.

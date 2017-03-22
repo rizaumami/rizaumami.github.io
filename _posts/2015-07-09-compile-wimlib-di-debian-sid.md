@@ -45,7 +45,7 @@ wimlib (1.8.3) unstable; urgency=low
 Pastikan *user* memiliki `PATH` `/sbin`, jika tidak kompilasi akan gagal karena gagal mejalankan `mkntfs` untuk pengujian biner hasil kompilasi.
 
 {% highlight sh %}
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/java/jre/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/java/jre/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"  
 {% endhighlight %}
     
 Lakukan kompilasi. 
@@ -57,13 +57,13 @@ dpkg-buildpackage -uc -us -b -rfakeroot
 Kompilasi mungkin akan terhenti karena tidak terpenuhinya paket yang dibutuhkan untuk kompilasi (*dependency*), misal:
 
 {% highlight sh %}
-dpkg-checkbuilddeps: Unmet build dependencies: debhelper (>= 8.9.7) autotools-dev pkg-config libfuse-dev libxml2-dev libssl-dev ntfs-3g-dev (>= 2011.4.12) attr-dev attr doxygen
+dpkg-checkbuilddeps: Unmet build dependencies: debhelper (>= 8.9.7) autotools-dev pkg-config libfuse-dev libxml2-dev libssl-dev ntfs-3g-dev (>= 2011.4.12) attr-dev attr doxygen  
 {% endhighlight %}
 
 Karenanya pasang dahulu paket-paket tersebut:
 
 {% highlight sh %}
-sudo aptitude install debhelper autotools-dev pkg-config libfuse-dev libxml2-dev libssl-dev ntfs-3g-dev attr-dev attr doxygen
+sudo aptitude install debhelper autotools-dev pkg-config libfuse-dev libxml2-dev libssl-dev ntfs-3g-dev attr-dev attr doxygen  
 {% endhighlight %}
 
 Kemudian jalankan lagi perintah kompilasi.

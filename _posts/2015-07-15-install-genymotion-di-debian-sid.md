@@ -15,50 +15,50 @@ comments: true
 
   Dicontohkan berkas Genymotion yang diunduh adalah versi 2.5 64bit:
 
-{% highlight sh %}
-sudo wget http://files2.genymotion.com/genymotion/genymotion-2.5.0/genymotion-2.5.0_x64.bin -O /opt
-{% endhighlight %}
+  ```sh
+  sudo wget http://files2.genymotion.com/genymotion/genymotion-2.5.0/genymotion-2.5.0_x64.bin -O /opt  
+  ```
 
 * Berpindah ke `/opt` dan pasang Genymotion.
 
-{% highlight sh %}
-cd /opt
-sudo ./genymotion-2.5.0_x64.bin
-{% endhighlight %}
+  ```sh
+  cd /opt
+  sudo ./genymotion-2.5.0_x64.bin
+  ```
 
 * Setelah proses pemasangan, jangan dahulu menjalankan Genymotion. Genymotion dibekali pustaka `Qt` yang tidak cocok dengan pustaka `Qt` dalam repo Debian, karenanya kita akan pindahkan berkas tersebut agar Genymotion hanya menggunakan pustaka `Qt` dari Debian.
 
-{% highlight sh %}
-cd genymotion/
-mkdir Qt-asli
-mv libQt* Qt-asli/
-{% endhighlight %}
+  ```sh
+  cd genymotion/
+  mkdir Qt-asli
+  mv libQt* Qt-asli/
+  ```
 
 * Baru kemudian kita pasang pustaka `Qt` pengganti:
 
-{% highlight sh %}
-sudo aptitude install libqt4-script libqt4-sql libqt4-svg libqtwebkit4
-{% endhighlight %}
+  ```sh
+  sudo aptitude install libqt4-script libqt4-sql libqt4-svg libqtwebkit4
+  ```
 
 * Genymotion ini tidak dibekali berkas `.desktop` sehingga tidak akan muncul di menu *desktop environment*. Karenanya, baik kita buat berkas *launcher* tersebut.
 
-{% highlight sh %}
-sudo nano /usr/share/applications/genymotion.desktop
-{% endhighlight %}
+  ```sh
+  sudo nano /usr/share/applications/genymotion.desktop
+  ```
 
-Dan isikan *string* berikut:
+  Dan isikan *string* berikut:
 
-{% highlight sh %}
-[Desktop Entry]
-Encoding=UTF-8
-Version=1.0
-Type=Application
-Name=Genymotion
-Comment=Virtual environment for Android
-Exec=/opt/genymotion/genymotion
-Icon=/opt/genymotion/icons/icon.png
-Terminal=false
-Categories=Emulator;System;Development;Application;
-{% endhighlight %}
+  ```sh
+  [Desktop Entry]
+  Encoding=UTF-8
+  Version=1.0
+  Type=Application
+  Name=Genymotion
+  Comment=Virtual environment for Android
+  Exec=/opt/genymotion/genymotion
+  Icon=/opt/genymotion/icons/icon.png
+  Terminal=false
+  Categories=Emulator;System;Development;Application;
+  ```
 
 *That's all folks*. :kissing_heart:

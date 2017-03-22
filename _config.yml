@@ -21,6 +21,7 @@ disqus_username:    rizaumami
 
 # Build settings
 markdown:           kramdown
+highlighter:        rouge
 
 gems:
   - jemoji

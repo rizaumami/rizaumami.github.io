@@ -31,7 +31,7 @@ awk -F '"' '((NR<22)&&($5=="url")){print "[redd.it/"$1"]",$13$14$15}' >> $temp_d
 get_kaskushotthread() {
 wget http://m.kaskus.co.id/ -O $temp_dir/kaskus_ht
 awk '{gsub(/<a href="|<\/a>/,"\n")}; 1'  $temp_dir/kaskus_ht | \
-awk -F'/[?]ref=forumlanding&med=hot_thread">' -v OFS='\n' '/hot_thread/{print $2,"m.kaskus.co.id"$1}' >> $temp_dir/koran
+awk -F'/[?]ref=forumlanding&med=hot_thread">' -v OFS='\n' '/hot_thread/{print $2,"m.kaskus.co.id"$1}' >> $temp_dir/koran  
 }
 
 

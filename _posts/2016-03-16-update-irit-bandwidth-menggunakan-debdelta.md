@@ -17,14 +17,17 @@ Jadi kesimpulan sederhananya; `debdelta` bagus bagi kita yang terkendala sambung
 Jika sudah mantap hati untuk menggunakan `debdelta`, silahkan ikuti langkah berikut:  
 
 - Pasang paket `debdelta`
-{% highlight sh %}
-sudo apt install debdelta
-{% endhighlight %}  
+
+  ```sh
+  sudo apt install debdelta
+  ```
+
 - Paket `debdelta` akan memasang tiga berkas pada sistem; (1) `debdelta)`, (2) `debdeltas`, dan (3) `debdelta-upgrade`. `debdelta-upgrade`-lah yang bertanggung jawab melakukan _upgrade_ menggunakan delta.  
 `debdelta-upgrade` merupakan perintah yang terpisah dari `APT`, jadi baiknya kita buat alias agar proses pemutakhiran sistem lebih ringkas dan nyaman.
-{% highlight sh %}
-alias deltaupgrade='sudo apt update && sudo debdelta-upgrade -v && sudo apt full-upgrade'
-{% endhighlight %}  
+
+  ```sh
+  alias deltaupgrade='sudo apt update && sudo debdelta-upgrade -v && sudo apt full-upgrade'  
+  ```
 
 Kita telah berhasil memasang `debdelta` dan menentukan alias bagi penggunaan `debdelta-upgrade`. Selanjutnya jika hendak memutakhirkan sistem, maka kita cukup mengetikkan perintah `deltaupgrade` di terminal.
 

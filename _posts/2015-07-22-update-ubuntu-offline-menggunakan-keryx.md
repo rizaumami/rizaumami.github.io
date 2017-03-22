@@ -25,9 +25,9 @@ Berikut cara menggunakan `Keryx` disarikan dari tutorial yang terdapat dalam *ta
 
   Unduh `Keryx` dari [https://launchpad.net/keryx/+download](https://launchpad.net/keryx/+download) atau dari repo github yang saya buat dengan cara:
 
-{% highlight sh %}
-git clone https://github.com/rizaumami/keryx.git
-{% endhighlight %}
+  ```sh
+  git clone https://github.com/rizaumami/keryx.git
+  ```
 
   atau dengan mengunduh `https://github.com/rizaumami/keryx/archive/master.zip`.
 

@@ -19,9 +19,11 @@ Berikut langkah untuk menjalankan banyak akun Telegram secara bersamaan dengan m
 Jika menggunakan direktori kosong, maka kita perlu untuk mendaftarkan ulang nomor telpon akun kita. Nama direktori bebas, dan untuk tutor ini kita andaikan namanya adalah `anon` yang terletak di `$HOME`.
 - Unduh berkas biner Telegram Desktop terbaru, kemudian uraikan di tempat yang mudah diingat, misal di direktori `~/anon` tadi.
 - Jalankan Telegram Desktop dengan akun baru ini menggunakan perintah:
-{% highlight sh %}
-~/anon/Telegram -workdir ~/anon
-{% endhighlight %}
+
+  ```sh
+  ~/anon/Telegram -workdir ~/anon
+  ```
+
 - Profit!
 
 Langkah tersebut bisa diulangi sebanyak akun yang hendak dijalankan.
@@ -30,8 +32,9 @@ Kelemahan langkah di atas adalah kita mesti menyediakan berkas biner Telegram De
 
 1. Misalkan berkas biner Telegram kita tempatkan di `/opt`
 2. Jalankan setiap akun dengan menggunakan perintah berikut:
-{% highlight sh %}
-/opt/Telegram -many -workdir ~/anon
-{% endhighlight %}
+
+   ```sh
+   /opt/Telegram -many -workdir ~/anon
+   ```
 
 

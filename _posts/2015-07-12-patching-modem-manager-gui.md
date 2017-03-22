@@ -20,97 +20,97 @@ Pilihan kedua, yakni dengan membangun ulang `modem-manager-gui` dengan [*patch*]
 * Unduh *source* `modem-manager-gui`. Cara yang disarankan tentu saja dengan mengaktifkan repo *source* pada `/etc/apt/sources.list`.
 Sunting `/etc/apt/sources.list` menggunakan `nano` dengan perintah `sudo nano /etc/apt/sources.list`. Jika misalnya repo Anda adalah seperti berikut:
 
-{% highlight sh %}
-deb http://kambing.ui.ac.id/debian sid main contrib non-free
-{% endhighlight %}
+  ```sh
+  deb http://kambing.ui.ac.id/debian sid main contrib non-free
+  ```
 
-Tambahkan baris untuk *source*:
+* Tambahkan baris untuk *source*:
 
-{% highlight sh %}
-deb-src http://kambing.ui.ac.id/debian sid main contrib non-free
-{% endhighlight %}
+  ```sh
+  deb-src http://kambing.ui.ac.id/debian sid main contrib non-free
+  ```
 
-Mutakhirkan *database* lokal
+* Mutakhirkan *database* lokal
 
-{% highlight sh %}
-sudo aptitude update
-{% endhighlight %}
+  ```sh
+  sudo aptitude update
+  ```
 
-Buat map tersendiri untuk proses kompilasi ini agar lebih rapi.
+* Buat map tersendiri untuk proses kompilasi ini agar lebih rapi.
 
-{% highlight sh %}
-mkdir mmgui
-{% endhighlight %}
+  ```sh
+  mkdir mmgui
+  ```
 
-Dan pindah ke dalamnya.
+* Dan pindah ke dalamnya.
 
-{% highlight sh %}
-cd mmgui
-{% endhighlight %}
+  ```sh
+  cd mmgui
+  ```
 
-Unduh *source* `modem-manager-gui`
+* Unduh *source* `modem-manager-gui`
 
-{% highlight sh %}
-apt-get source modem-manager-gui
-{% endhighlight %}
+  ```sh
+  apt-get source modem-manager-gui
+  ```
 
-Unduh *patch*.
+* Unduh *patch*.
 
-{% highlight sh %}
-wget http://download.tuxfamily.org/gsf/patch/modem-manager-gui-0.0.17.1-fix-libebook-api-break-v2.patch
-{% endhighlight %}
+  ```sh
+  wget http://download.tuxfamily.org/gsf/patch/modem-manager-gui-0.0.17.1-fix-libebook-api-break-v2.patch  
+  ```
 
-Uraikan berkas `modem-manager-gui_0.0.17.1.orig.tar.gz` menggunakan perintah:
+* Uraikan berkas `modem-manager-gui_0.0.17.1.orig.tar.gz` menggunakan perintah:
 
-{% highlight sh %}
-tar xvf modem-manager-gui_0.0.17.1.orig.tar.gz
-{% endhighlight %}
+  ```sh
+  tar xvf modem-manager-gui_0.0.17.1.orig.tar.gz
+  ```
 
-Uraikan berkas `modem-manager-gui_0.0.17.1-2.debian.tar.xz` ke dalam map `modem-manager-gui`.
+* Uraikan berkas `modem-manager-gui_0.0.17.1-2.debian.tar.xz` ke dalam map `modem-manager-gui`.
 
-{% highlight sh %}
-tar -xJC modem-manager-gui-0.0.17.1  -f modem-manager-gui_0.0.17.1-2.debian.tar.xz
-{% endhighlight %}
+  ```sh
+  tar -xJC modem-manager-gui-0.0.17.1  -f modem-manager-gui_0.0.17.1-2.debian.tar.xz  
+  ```
 
-Masuk ke dalam map `modem-manager-gui-0.0.17.1` untuk memulai kompilasi
+* Masuk ke dalam map `modem-manager-gui-0.0.17.1` untuk memulai kompilasi
 
-{% highlight sh %}
-cd modem-manager-gui-0.0.17.1
-{% endhighlight %}
+  ```sh
+  cd modem-manager-gui-0.0.17.1
+  ```
 
-*Patch source*.
+* *Patch source*.
 
-{% highlight sh %}
-patch -p1 < ../modem-manager-gui-0.0.17.1-fix-libebook-api-break-v2.patch
-{% endhighlight %}
+  ```sh
+  patch -p1 < ../modem-manager-gui-0.0.17.1-fix-libebook-api-break-v2.patch
+  ```
 
-Lakukan kompilasi
+* Lakukan kompilasi
 
-{% highlight sh %}
-dpkg-buildpackage -uc -us -rfakeroot
-{% endhighlight %}
+  ```sh
+  dpkg-buildpackage -uc -us -rfakeroot
+  ```
 
-Jika kompilasi terhenti karena galat:
+* Jika kompilasi terhenti karena galat:
 
-{% highlight sh %}
-dpkg-checkbuilddeps: Unmet build dependencies: itstool libgdbm-dev libglib2.0-dev libgtk-3-dev ofono-dev (>= 1.9) po4a
-{% endhighlight %}
+  ```sh
+  dpkg-checkbuilddeps: Unmet build dependencies: itstool libgdbm-dev libglib2.0-dev libgtk-3-dev ofono-dev (>= 1.9) po4a  
+  ```
 
-Berarti ada *dependency* yang tidak terpenuhi. Install paket-paket ketergantungan tersebut.
+* Berarti ada *dependency* yang tidak terpenuhi. Install paket-paket ketergantungan tersebut.
 
-{% highlight sh %}
-sudo aptitude install itstool libgdbm-dev libglib2.0-dev libgtk-3-dev ofono-dev po4a
-{% endhighlight %}
+  ```sh
+  sudo aptitude install itstool libgdbm-dev libglib2.0-dev libgtk-3-dev ofono-dev po4a
+  ```
 
-Ulangi kompilasi.
+  Ulangi kompilasi.
 
-Jika kompilasi berhasil, akan ada berkas `modem-manager-gui_0.0.17.1-2_amd64.deb` dan `modem-manager-gui-dbg_0.0.17.1-2_amd64.deb` di luar map `mmgui`.
+* Jika kompilasi berhasil, akan ada berkas `modem-manager-gui_0.0.17.1-2_amd64.deb` dan `modem-manager-gui-dbg_0.0.17.1-2_amd64.deb` di luar map `mmgui`.
 
-Install paket `modem-manager-gui` hasil komppilasi.
+* Install paket `modem-manager-gui` hasil kompilasi.
 
-{% highlight sh %}
-modem-manager-gui-dbg_0.0.17.1-2_amd64.deb
-{% endhighlight %}
+  ```sh
+  modem-manager-gui-dbg_0.0.17.1-2_amd64.deb
+  ```
 
 ![mmgui](http://i.imgur.com/3LyvSZ2.png)
 

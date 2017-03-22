@@ -124,7 +124,7 @@ sudo chown "$USER:$USER" "$VBOXVMS/$VM_NAME/"*
 # Membuat media penyimpanan
 VBoxManage storagectl "$VM_NAME" --name SATA --add sata --controller IntelAhci --hostiocache off --bootable on
 # Mengaitkan disk ke media penyimpanan
-VBoxManage storageattach "$VM_NAME" --storagectl SATA --port 0 --device 0 --type hdd --medium "$VBOXVMS/$VM_NAME/windows7.vdi" --nonrotational on
+VBoxManage storageattach "$VM_NAME" --storagectl SATA --port 0 --device 0 --type hdd --medium "$VBOXVMS/$VM_NAME/windows7.vdi" --nonrotational on  
 # Mengaitkan cakram ke media penyimpanan
 VBoxManage storageattach "$VM_NAME" --storagectl SATA --port 1 --device 0 --type dvddrive --medium "$ISO_DISC"
 {% endhighlight %}

@@ -20,8 +20,8 @@ Cara kerja *script* ini adalah sebagai berikut; `udev` mendeteksi apakah laptop 
 
 {% highlight sh %}
 # Jalankan powersaving script berdasar catu daya yang sedang digunakan
-SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="0", RUN+="/usr/bin/t520powersave true"
-SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="1", RUN+="/usr/bin/t520powersave false"
+SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="0", RUN+="/usr/bin/t520powersave true"  
+SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="1", RUN+="/usr/bin/t520powersave false"  
 {% endhighlight %}
 
 Bagaimana `bash` *script* tersebut menghemat daya? Dengan menerapkan parameter tertentu pada perangkat tertentu sebagaimana saran dari `powertop`.
@@ -63,11 +63,11 @@ case "$1" in
         echo 'auto' > '/sys/bus/pci/devices/0000:00:1c.1/power/control'
         echo 'auto' > '/sys/bus/pci/devices/0000:00:1d.0/power/control'
         ethtool -s enp0s25 wol d
-	;;
+  ;;
     false) # Return to default on AC power
         echo 'max_performance' > '/sys/class/scsi_host/host0/link_power_management_policy';
         echo '3000' > '/proc/sys/vm/dirty_writeback_centisecs';
-        for i in /sys/class/scsi_host/host*/link_power_management_policy; do echo max_performance > $i; done
+        for i in /sys/class/scsi_host/host*/link_power_management_policy; do echo max_performance > $i; done  
         echo 'on' > '/sys/bus/usb/devices/2-1.5/power/control';
         echo 'on' > '/sys/bus/usb/devices/2-1.4/power/control';
         #echo 'auto' > '/sys/bus/usb/devices/1-1.2/power/control';

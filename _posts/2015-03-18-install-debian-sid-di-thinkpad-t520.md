@@ -16,7 +16,7 @@ yaourt -S debootstrap
 Lakukan `debootstrap`.
 
 {% highlight sh %}
-sudo debootstrap --arch=amd64 --variant=buildd --no-check-gpg sid /tmp/_sid http://kambing.ui.ac.id/debian
+sudo debootstrap --arch=amd64 --variant=buildd --no-check-gpg sid /tmp/_sid http://kambing.ui.ac.id/debian  
 {% endhighlight %}
 
 Perintah di atas akan memasang sistem `debootstrap` Debian Sid 64 bit sekaligus paket `build-essential` ke map `/tmp/_sid`. Cermin yang digunakan adalah [http://kambing.ui.ac.id](http://kambing.ui.ac.id) dengan mengabaikan `gpg`.
@@ -109,8 +109,8 @@ LANG=C chroot /tmp/_sid /bin/bash
   
 Karena ArchLinux dan Debian berbeda `$PATH`, maka export `PATH` yang biasa digunakan Debian.
 
-{% highlight sh %} 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/java/jre/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"
+{% highlight sh %}
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/java/jre/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"  
 {% endhighlight %}
 
 Mutakhirkan daftar paket:
@@ -145,13 +145,13 @@ Pasang paket-paket pembangun *graphical user interface* (GUI). Saya lebih menyuk
 Pasang paket pendukung perangkat keras grafik (Xorg) dan *firmware* radio.
 
 {% highlight sh %}
-aptitude install xorg xserver-xorg-video-intel xserver-xorg-input-evdev firmware-linux-nonfree firmware-iwlwifi
+aptitude install xorg xserver-xorg-video-intel xserver-xorg-input-evdev firmware-linux-nonfree firmware-iwlwifi  
 {% endhighlight %}
 
 Pasang GNOME dan pendukungnya:
 
 {% highlight sh %}
-aptitude install gnome-shell colord file gdm3 gnome-control-center gnome-session gstreamer1.0-plugins-base gstreamer1.0-plugins-good gtk2-engines-pixbuf hwdata nautilus pulseaudio gnome-terminal gedit iceweasel
+aptitude install gnome-shell colord file gdm3 gnome-control-center gnome-session gstreamer1.0-plugins-base gstreamer1.0-plugins-good gtk2-engines-pixbuf hwdata nautilus pulseaudio gnome-terminal gedit iceweasel  
 {% endhighlight %}
 
 Buat `username` baru, misal `iza`.
