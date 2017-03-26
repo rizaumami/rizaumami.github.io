@@ -17,7 +17,7 @@ _Life is hard enough, don’t make it harder shall we?_. Berikut dicontohkan men
 
 Perhatikan gambar di bawah. Kita memiliki sebuah tabel biodata anak dari kolom B baris 2 (B2) hingga kolom H baris 12 (H12). Kelompok umur akan diletakkan di J2 hingga M6. Fokus utama tentu saja hanya di K3 hingga M4 karena untuk K5 hingga M6 hanyalah penjumlahan biasa.
 
-[![LibreCalc]({{ site.baseurl }}/imgs/calc_group_age.png)]({{ site.baseurl }}/img/calc_group_age.png)
+[![LibreCalc]({{ site.baseurl }}/assets/img/calc_group_age.png)]({{ site.baseurl }}/img/calc_group_age.png)
 
 Bagaimana misalnya mengisi sel K3 dengan jumlah anak laki-laki yang berusia 6 tahun? Gunakan formula berikut pada sel K3:
 

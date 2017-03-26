@@ -9,14 +9,11 @@ layout: default
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
-<!--
-        <div style="width:6em; float:left">
--->
-        <div style="float:left">
-          <span class="post-meta">{{ post.date | date: "%d %b %Y" }}</span>
+        <div style="width: 6em; display: inline-block">
+          <span class="post-meta"><code>{{ post.date | date: "%d %b %Y" }}</code></span>
         </div>
-        <div>
-          » <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <div style="display: inline">
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </div>
       </li>
     {% endfor %}

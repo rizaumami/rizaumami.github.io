@@ -9,7 +9,7 @@ Selain mengelompokkan usia anak, seorang guru kelas juga mesti menghitung usia a
 
 *Spreadsheet* berikut akan mencontohkan bagaimana menghitung usia anak berdasarkan tanggal lahir di kolom F (F3:F7) dan menempatkan berapa tahun usia anak di kolom G, lewat berapa bulan di kolom H dan lewat berapa hari di kolom I:
 
-[![LibreCalc]({{ site.baseurl }}/imgs/calc-hitung-usia-kini.png)]({{ site.baseurl }}/img/calc-hitung-usia-kini.png)
+[![LibreCalc]({{ site.baseurl }}/assets/img/calc-hitung-usia-kini.png)]({{ site.baseurl }}/img/calc-hitung-usia-kini.png)
 
 Untuk menghitung berapa tahun usia saat ini, gunakan formula berikut di kolom G3:
 

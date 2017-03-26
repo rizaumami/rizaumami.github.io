@@ -30,7 +30,7 @@ Entah apa yang membuat banyak orang masih memasang WinRAR. WinRAR kini tidak leb
 [_Use 7 zip. It's free, reliable, multiplatform, and full pack of features_](http://www.7-zip.org/).  
 5. **Foxit Reader**  
 PDF bukan sepenuhnya standar terbuka, beberapa fitur penting masih hanya diketahui oleh Adobe. Jadi, jika perlu _full featured PDF reader/editor_, gunakan pembaca atau penyunting PDF dari Adobe.  
-Saya lebih pas dengan [`Foxit Reader`](https://www.foxitsoftware.com/) sebagai pembaca PDF, ia tidak seberat `Adobe Reader`, dan juga lebih banyak fitur dibanding `SumatraPDF`, khususnya karena saya perlu `PDF printer`. Jadi dengan memsang [`Foxit Reader`](https://www.foxitsoftware.com/), ibarat sekali dayung dua tiga pulau terlampaui; bisa membaca PDF, juga mencetak ke PDF. 
+Saya lebih pas dengan [`Foxit Reader`](https://www.foxitsoftware.com/) sebagai pembaca PDF, ia tidak seberat `Adobe Reader`, dan juga lebih banyak fitur dibanding [`SumatraPDF`](https://www.sumatrapdfreader.org), khususnya karena saya perlu `PDF printer`. Jadi dengan memasang [`Foxit Reader`](https://www.foxitsoftware.com/), ibarat sekali dayung dua tiga pulau terlampaui; bisa membaca PDF, juga mencetak ke PDF. 
 6. **CuteWriter**  
 Fungsi [`CuteWriter`](http://cutepdf.com/Products/CutePDF/writer.asp) memang tumpang tindih dengan `Foxit`. Saya memasang [`CuteWriter`](http://cutepdf.com/Products/CutePDF/writer.asp) jika enggan memasang `Foxit`. Jadi, baca PDF menggunakan `Firefox` dan cetak ke PDF menggunakan [`CuteWriter`](http://cutepdf.com/Products/CutePDF/writer.asp).  
 Sebagai pencetak PDF, [`CuteWriter`](http://cutepdf.com/Products/CutePDF/writer.asp) lebih ringan, namun `Foxit` lebih memiliki banyak fitur. _I usually go with Foxit..._
@@ -46,7 +46,7 @@ Membuat Windows _system repair disc_ atau ThinkVantage _backup_ misalnya, bersik
 _Introducing, [`Total Mounter`](http://www.kernsafe.com/product/totalmounter.aspx), an image mounter, and a virtual CD/DVD burner._ 
 10. **ImgBurn**  
 Perlu _burning_ keping optik? Lupakan piranti _burner_ bawaan Windows, _it's sucks, as usual_.  
-Hemat uang Anda karena gagal _burning_ CD/DVD dengan menggunakan [`ImgBurn`](http://imgburn.com/) sebagai _burner_.
+Hemat uang Anda karena gagal _burning_ CD/DVD, gunakan [`ImgBurn`](http://imgburn.com/) sebagai _burner_.
 11. **JKDefrag/MyDefrag**  
 Windows teranyar memiliki fitur _defrag_ yang terjadwal. Jadi tidak diperlukan lagi meluangkan waktu khusus untuk _defragging_.  
 Namun, kadang kala saya perlu menyalin berkas langsung dari lingkungan Linux ke partisi NTFS, yang hasilnya berkas tersebar di seluruh partisi karena perbedaan cara Linux dalam menyalin berkas dibanding Windows.  
@@ -66,6 +66,6 @@ Contoh di atas hanyalah salah satu kasus, pastinya ada kasus lain di mana [`WinD
 15. **Ultimate Windows Tweaker**  
 IMHO, Windows 7 sudah cantik dan nyaman digunakan. Namun ada beberapa pilihan _default_ yang kurang sreg di hati. Misal, saya lebih suka memunculkan _file extension_, memiliki pilihan _Copy to_ dan _Move to_ di _context menu_, dan lain-lain.  
 Sayangnya, untuk memunculkan fitur-fitur tersebut mesti merubah satu-per-satu _registry key_. _That's unintuitive, and unfriendly_.  
-Memperkenalkan, [`Ultimate Windows Tweaker`](http://www.thewindowsclub.com/ultimate-windows-tweaker-v2-a-tweak-ui-for-windows-7-vista), sebuah _portable tweaker_ yang dapat memunculkan fitur-fitur tersembunyi tersebut tanpa harus berkutat dengan script atau registry.
+Memperkenalkan, [`Ultimate Windows Tweaker`](http://www.thewindowsclub.com/ultimate-windows-tweaker-v2-a-tweak-ui-for-windows-7-vista), sebuah _portable tweaker_ yang dapat memunculkan fitur-fitur tersembunyi tersebut tanpa harus berkutat dengan _script_ atau _registry_.
 
 _Well, that's it for now..._
