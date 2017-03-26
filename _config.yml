@@ -23,5 +23,10 @@ disqus_username:    rizaumami
 markdown:           kramdown
 highlighter:        rouge
 
+compress_html:
+  clippings: all
+  comments:  ["<!-- ", " -->"]
+  endings:   all
+  
 gems:
   - jemoji
