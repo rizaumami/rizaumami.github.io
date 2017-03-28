@@ -28,5 +28,11 @@ compress_html:
   comments:  ["<!-- ", " -->"]
   endings:   all
 
+sitemap:
+  lastmod: 
+  priority: 0.5
+  changefreq: monthly
+  exclude: 'no'
+  
 gems: 
   - jemoji
