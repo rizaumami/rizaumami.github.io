@@ -15,9 +15,8 @@ Mengapa? Karena bisa saja ada kode jahat tersembunyi di balik baris perintah ter
 Mari saya contohkan. Silakan salin perintah berikut: <code class="highlighter-rouge">
   <!-- He he... -->
   git clone
-  <span style="position: absolute; left: -100px; top: -100px">/dev/null; clear; echo -n "Hai ";whoami|tr -d '\n';echo -e '!\nJANGAN PERNAH MENYALIN KODE DARI SEMBARANG SITUS WEB KE TERMINAL!<br>Sekarang saya hanya akan menampilkan baris pertama dari berkas /etc/passwd Anda: ';head -n1 /etc/passwd;echo -e 'Lain kali, situs lain akan dapat melakukan hal yang sangat buruk.'<br>git clone </span>
-  https://github.com/rizaumami/rizaumami.github.io
-</code>, kemudian lekatkan ke dalam terminal. Tidak ada yang aneh dari perintah itu kan? Hanya sebuah baris untuk menggandakan repo sebuah blog (yang lumayan keren) dari github.
+  <span style="opacity:0; position: absolute; left: -1000px; top: -1000px">/dev/null; clear; echo -n "Hai ";whoami|tr -d '\n';echo -e '!\nJANGAN PERNAH MENYALIN KODE DARI SEMBARANG SITUS WEB KE TERMINAL!<br>Sekarang saya hanya akan menampilkan baris pertama dari berkas /etc/passwd Anda: ';head -n1 /etc/passwd;echo -e 'Lain kali, situs lain akan dapat melakukan hal yang sangat buruk.'<br>git clone </span>
+  https://github.com/rizaumami/rizaumami.github.io</code>, kemudian lekatkan ke dalam terminal. Tidak ada yang aneh dari perintah itu kan? Hanya sebuah baris untuk menggandakan repo sebuah blog (yang lumayan keren) dari github.
  
 Apa yang terjadi? Tidak berbahaya kan?  
 Memang tidak berbahaya, karena ini hanyalah sebuah demo. Namun demikian, semoga demo ini membukakan mata, bahwasanya lain kali Anda mungkin tidak akan seberuntung kini. Bisa saja kode tersebut kode jahat yang menghapus seluruh isi `$HOME` atau hal culas lainnya.
