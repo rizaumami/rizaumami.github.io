@@ -10,7 +10,7 @@ Naon atuh anu bakal dipedar dina tulisan poé ayeuna?
 
 Sok, coba tingali, gambar naon ieu di handap? Pernah manggihan gambar siga kitu pas keur internétan?
 
-[![Internet Sehat]({{ site.baseurl }}/assets/img/internet_sehat.jpg)]({{ site.baseurl }}/img/internet_sehat.jpg)
+[![Internet Sehat]({{ site.baseurl }}/assets/img/internet_sehat.jpg)]({{ site.baseurl }}/assets/img/internet_sehat.jpg)
 
 Cenah mah éta téh ngaranna _"Internét Séhat"_. Duka naon tah maksudna, sim kuring moal jero-jero mesék. Anu puguh mah jadi asa teu pararuguh, geus mah internét mahal, léod ngeteyep siga kuya batok, bari jeung dihahalang, teu meunang kaditu, teu meunang kadieu.
 
