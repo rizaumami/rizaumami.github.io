@@ -14,17 +14,17 @@ layout: default
 
   <div class="pagination">
     <ul style="margin-left: 0">
-    {% if page.previous %}
-      <li style="display: inline-block"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}"><code>&lt; Prev</code></a></li>
-    {% else %}
-      <li style="display: inline-block"><a><code>&lt; Prev</code></li>
-    {% endif %}
-      <li style="display: inline-block">&nbsp;•&nbsp;<a href="{{ BASE_PATH }}/index.html" title="Back to the front page"><code>Home</code></a>&nbsp;•&nbsp;</li>
-    {% if page.next %}
-      <li style="display: inline-block"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}"><code>Next &gt;</code></a></li>
-    {% else %}
-      <li style="display: inline-block"><code>Next &gt;</code>
-    {% endif %}
+      {% if page.previous %}
+        <a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}"><code>&lt; Prev</code></a>
+      {% else %}
+        <a><code>&lt; Prev</code>
+      {% endif %}
+        &nbsp;•&nbsp;<a href="{{ BASE_PATH }}/index.html" title="Back to the front page"><code>Home</code></a>&nbsp;•&nbsp;
+      {% if page.next %}
+        <a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}"><code>Next &gt;</code></a>
+      {% else %}
+        <code>Next &gt;</code>
+      {% endif %}
     </ul>
   </div>
 </article>
