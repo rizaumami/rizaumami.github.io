@@ -11,7 +11,7 @@ Selama ini tiap kali hendak membuat artikel baru, saya selalu membuat berkas `ma
 Dan beberapa hari lalu, saya membaca sebuah artikel dari [blog kawan](https://linhub.io/ruby/2017/04/23/mudah-memasang-ruby/) tentang kisahnya membangun blog statis menggunakan `jekyll`. _His blog is interesting_, sebuah blog statis namun menerapkan banyak pernik yang membuatnya terlalu "sibuk" sebagai sebuah blog statis.  
 Kembali menyoal artikelnya. Yang menarik perhatian adalah bagaimana dia menggunakan bantuan `rake` untuk automasi proses pembuatan _template_ artikel. _Sounds useful_. Namun setelah lanjut membaca, ternyata `rake` ini membutuhkan berkas pengaturan `rakefile` yang isinya lumayan rumit. Entah rumit karena memang dasarnya rumit, atau memang kawan saya ini memerlukan pengaturan membuat _template_ yang rada rumit, yang pasti cukup memadamkan ketertarikan saya untuk menggunakannya.
 
-`rake` mungkin agak rumit, namun membuat automasi pembuatan _template_ artikel tetaplah menarik. _Well, I have an idea_. Seperti halnya ketika [membuat _launcher_ Telegram desktop](2017-03-27-membuat-launcher-bagi-telegram-multi-akun.md) di artikel lalu, kali ini pun saya akan membuat sebuh script sederhana yang mendayagunakan _utilities_ yang sudah terpasang dalam sistem, seperti `zenity`, `nautilus`, dan `bash`.  
+`rake` mungkin agak rumit, namun membuat automasi pembuatan _template_ artikel tetaplah menarik. _Well, I have an idea_. Seperti halnya ketika [membuat _launcher_ Telegram desktop](/2017/03/27/membuat-launcher-bagi-telegram-multi-akun/) di artikel lalu, kali ini pun saya akan membuat sebuh script sederhana yang mendayagunakan _utilities_ yang sudah terpasang dalam sistem, seperti `zenity`, `nautilus`, dan `bash`.  
 
 Tidak berpanjang lebar, buat sebuah skrip `bash` dan letakkan di sembarang tempat asal bisa dipanggil melalui terminal. Berikut isi skripnya, misal kita beri nama `ghpages`.
 
@@ -83,7 +83,7 @@ else
   esac
 fi
 ```
-Tidak ada yang aneh dari isi skrip-nya, jadi tidak perlu kiranya dijelaskna. Hanya saja, sesuaikan `POSTDIR` dengan letak map artikel. Menggunakan skrip di atas, kita bisa langsung membuat _template_ artikel baru dengan cara memanggilnya dalam terminal menggunakan perintah `ghpages Judul Artikel`. Atau jika menginginkan sentuhan GUI, jalankan skrip tanpa argumen; `ghpages`.
+Tidak ada yang aneh dari isi skripnya, jadi tidak perlu kiranya diberi penjelasan. Hanya saja, sesuaikan `POSTDIR` dengan letak map artikel. Menggunakan skrip di atas, kita bisa langsung membuat _template_ artikel baru dengan cara memanggilnya dalam terminal menggunakan perintah `ghpages Judul Artikel`. Atau jika menginginkan sentuhan GUI, jalankan skrip tanpa argumen; `ghpages`.
 
 Sekarang, kita tambahkan sedikit sentuhan agar skrip tidak melulu mesti dipanggil melalui terminal, namun bisa melalui _context menu_ (klik kanan). Dan karena saya menggunakan Gnome, maka bisa mendayagunakan `nautilus script`.  
 Buat sebuah skrip `nautilus` bernama misalnya "New blog article" dan simpan di `$HOME/.local/share/nautilus/scripts`. Berikut isi skript tersebut
